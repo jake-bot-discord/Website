@@ -1,8 +1,8 @@
 <script>
     import Logo from "$lib/assets/jake-logo.png";
-    import Discord from "$lib/assets/discord-icon.svg"
-    import Email from "$lib/assets/email-icon.svg"
-    import Insgram from "$lib/assets/instagram-icon.svg"
+    import Discord from "$lib/icons/discord.svg"
+    import Email from "$lib/icons/email.svg"
+    import Insgram from "$lib/icons/instagram.svg"
 </script>
 
 <footer class="flex flex-col-reverse md:flex-row items-center justify-center mb-[40px]">

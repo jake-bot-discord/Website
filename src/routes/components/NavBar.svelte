@@ -2,9 +2,9 @@
     import Logo from "$lib/assets/jake-logo.png"
     import { onMount } from "svelte";
     import { userStoredValue } from "../../store/user"
-    import Profile from "$lib/assets/profile-icon.svg"
-    import Logout from "$lib/assets/logout-icon.svg"
-    import Dashboard from "$lib/assets/dashboard-icon.svg"
+    import Profile from "$lib/icons/profile.svg"
+    import Logout from "$lib/icons/logout.svg"
+    import Dashboard from "$lib/icons/dashboard.svg"
 
     /**
      * @type {any}

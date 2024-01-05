@@ -1,13 +1,13 @@
 <script>
-    import Icone from "$lib/assets/jake-icone.png"
+    import Icone from "$lib/assets/jake.png"
     import Fazendas from "$lib/assets/fazenda.png"
     import Pishing from "$lib/assets/proteção.png"
     import Proteção from "$lib/assets/proteção-2.png"
     import Funções from "$lib/assets/funções.png"
     import Planta from "$lib/assets/planta.png"
 
-    import Check from "$lib/assets/check.svg"
-    import Diamond from "$lib/assets/diamond.svg"
+    import Check from "$lib/icons/check.svg"
+    import Diamond from "$lib/icons/diamond.svg"
 </script>
 
 <svelte:head>
