@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { userStoredValue } from "../../store/user"
+    import { env } from "$lib/env"
     
     //imagens
     import Logo from "$lib/assets/jake-logo.png"
@@ -91,7 +92,7 @@
     <div class="box hidden md:flex">
         {#if !_user}
             <button class="flex justify-center items-center w-[80px] h-[45px] bg-primary-2 rounded-lg active:grayscale-[10%] hover:bg-[#e39b00] duration-500">
-                <a href="http://localhost:8080/auth/login">
+                <a href={`${env.VITE_API_URL}/auth/login`}>
                     <p class="text-[#fff] font-medium text-[15px]">Login</p>
                 </a>
             </button>
@@ -173,7 +174,7 @@
 
                     <li class="flex flex-row my-[10px] w-[160px]">
                         <button class="flex justify-center items-center w-[80px] h-[45px] bg-primary-2 rounded-lg active:grayscale-[10%] hover:bg-[#e39b00] duration-500 m-auto">
-                            <a href="http://localhost:8080/auth/login">
+                            <a href={`${env.VITE_API_URL}/auth/login`}>
                                 <p class="text-[#fff] font-medium text-[15px]">Login</p>
                             </a>
                         </button>
