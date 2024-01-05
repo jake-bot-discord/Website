@@ -15,3 +15,5 @@ tsconfig.json
 .npmrc
 svelte.config.js
 vite.config.ts
+discloud.config
+index.ts
