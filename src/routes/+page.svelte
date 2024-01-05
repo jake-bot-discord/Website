@@ -1,5 +1,5 @@
 <script>
-    import Icone from "$lib/assets/jake.png"
+    import Icone from "$lib/assets/jake-icone.png"
     import Fazendas from "$lib/assets/fazenda.png"
     import Pishing from "$lib/assets/proteção.png"
     import Proteção from "$lib/assets/proteção-2.png"
@@ -16,7 +16,7 @@
 
 <div class="container flex flex-column md:m-auto md:w-[80%] ">
     <div class="row flex-col-reverse md:flex-row">
-        <div class="col hidden md:flex">
+        <div class="col">
             <img src={ Icone } alt="icone" class="w-[220px] md:w-[280px]">
         </div>
         <div class="col">
@@ -186,7 +186,6 @@
             padding: 0 30px;
             display: flex;
             align-items: center;
-            /* flex-wrap: wrap; */
             justify-content: center;
 
 			@media screen and (min-width: 768px) {
@@ -195,7 +194,6 @@
     
             .col {
                 display: flex;
-                /* flex-basis: 40%; */
                 width: 100%;
                 height: 100%;
                 align-items: center;

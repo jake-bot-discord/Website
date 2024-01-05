@@ -1,10 +1,20 @@
 <script>
-    import Logo from "$lib/assets/jake-logo.png"
     import { onMount } from "svelte";
     import { userStoredValue } from "../../store/user"
+    
+    //imagens
+    import Logo from "$lib/assets/jake-logo.png"
+    
+    //icones
     import Profile from "$lib/icons/profile.svg"
     import Logout from "$lib/icons/logout.svg"
     import Dashboard from "$lib/icons/dashboard.svg"
+    import OpenMenu from "$lib/icons/menu.svg"
+    import CloseMenu from "$lib/icons/close.svg"
+    import Document from "$lib/icons/docs.svg"
+    import Moeda from "$lib/icons/moeda.svg"
+    import Suporte from "$lib/icons/suporte.svg"
+    import Login from "$lib/icons/login.svg"
 
     /**
      * @type {any}
@@ -34,10 +44,28 @@
 		
         document.body.removeEventListener('click', handleMenuClose)
 	}
+
+    export let isNavOpen = false 
+
+    const handleNavOpen = () => {
+        isNavOpen = true
+
+        console.log("open")
+        
+        document.body.addEventListener('click', handleNavClose)
+    }
+
+    const handleNavClose = () => {
+		isNavOpen = false
+        
+        console.log("close")
+		
+        document.body.removeEventListener('click', handleNavClose)
+	}
 </script>
 
 <nav class="flex flex-row justify-between items-center px-[10px]">
-    <div class="box bg-purple-100 w-full md:w-[70px] flex justify-center items-center">
+    <div class="box bg-purple-100 w-[70px] flex justify-center items-center">
         <a href="/">
             <img src={ Logo } alt="logo" class="w-[100px] md:w-[70px]">
         </a>
@@ -108,5 +136,74 @@
                 </div>
             </div>
         {/if}
+    </div>
+
+    <div class="box md:hidden relative">
+        {#if !isNavOpen}
+            <button on:click|stopPropagation={handleNavOpen}>
+                <img src={ OpenMenu } alt="abrir_menu" class="w-[35px]">
+            </button>
+        {:else}
+            <button on:click|stopPropagation={handleNavClose}>
+                <img src={ CloseMenu } alt="fechar_menu" class="w-[35px]">
+            </button>
+        {/if}
+
+        <div aria-hidden="true" on:click|stopPropagation={() => {}} class={`nav-drop ${isNavOpen ? "absolute" : "hidden"} top-[100%] right-[5px] bg-[#ffffffe7] rounded-b-[25px] rounded-tl-[25px] rounded-tr-[5px] border-[2px] border-solid border-[#e39b00]`}>
+            <ul class="p-[15px]">
+                <li class="flex flex-row my-[10px] w-[160px]">
+                    <img src={ Suporte } alt="suporte_icon" class="w-[20px] mr-[8px]">
+                    <p> Suporte </p>
+                    <span />
+                </li>
+
+                <li class="flex flex-row my-[10px] w-[160px]">
+                    <img src={ Document } alt="docs_icon" class="w-[20px] mr-[8px]">
+                    <p> Documentação </p>
+                    <span />
+                </li>
+                
+                <li class="flex flex-row my-[10px] w-[160px]">
+                    <img src={ Moeda } alt="coin_icon" class="w-[20px] mr-[8px]">
+                    <p> Planos </p>
+                    <span />
+                </li>
+
+                {#if !_user}
+
+                    <li class="flex flex-row my-[10px] w-[160px]">
+                        <button class="flex justify-center items-center w-[80px] h-[45px] bg-primary-2 rounded-lg active:grayscale-[10%] hover:bg-[#e39b00] duration-500 m-auto">
+                            <a href="http://localhost:8080/auth/login">
+                                <p class="text-[#fff] font-medium text-[15px]">Login</p>
+                            </a>
+                        </button>
+                        <!-- <img src={ Login } alt="dashboard" class="w-[20px] mr-[8px]">
+                        <p>Login</p> -->
+                    </li>
+
+                {:else}
+                    
+                    <li class="flex flex-row items-center justify-center w-[160px]"> 
+                        <hr class="w-[100px] border-[1px] border-solid border-primary-2 rounded-[1px]"/> 
+                    </li>
+                    
+                    <li class="flex flex-row my-[10px] w-[160px]">
+                        <img src={ Dashboard } alt="dashboard" class="w-[20px] mr-[8px]">
+                        <p>Dashboard</p>
+                    </li>
+
+                    <li class="flex flex-row my-[10px] w-[160px]">
+                        <img src={ Profile } alt="profile" class="w-[16px] mx-[4px] mr-[8px]">
+                        <p>Perfil</p>
+                    </li>
+
+                    <li class="flex flex-row my-[10px] w-[160px]">
+                        <img src={ Logout } alt="logout" class="w-[16px] mx-[4px] mr-[8px]">
+                        <p class="text-highlite-red">Sair</p>
+                    </li>
+
+                {/if}
+            </ul>
+        </div>
     </div>
 </nav>

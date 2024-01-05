@@ -11,7 +11,8 @@ export default {
       },
       "highlite": {
         "blue": "#046dfc",
-        "red": "#ff1212"
+        "red": "#ff1212",
+        "green": "#5aa900"
       }
     },
 
