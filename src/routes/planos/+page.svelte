@@ -148,7 +148,6 @@
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("1")}}
             primaryColor="#979797"
-            backgroundColor="#f8f8f8"
         >
             <img
                 slot="image"
@@ -174,7 +173,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>1.5</span> XP em todo o bot
                     </p>
                 </li>
@@ -185,7 +184,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>1.25</span> no daily
                     </p>
                 </li>
@@ -196,7 +195,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>1.25</span> nas colheitas
                     </p>
                 </li>
@@ -210,7 +209,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Badge quartzo</p>
+                    <p class="text-[15px]">Badge quartzo</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -219,7 +218,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Cargo quartzo</p>
+                    <p class="text-[15px]">Cargo quartzo</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -228,7 +227,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         Chats exclusivos
                     </p>
                 </li>
@@ -239,7 +238,6 @@
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("2")}}
             primaryColor="#ffa928"
-            backgroundColor="#fff2c9"
         >
             <img
                 slot="image"
@@ -266,7 +264,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>1.75</span> XP em todo o bot
                     </p>
                 </li>
@@ -277,7 +275,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>1.50</span> no daily
                     </p>
                 </li>
@@ -288,7 +286,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>1.50</span> nas colheitas
                     </p>
                 </li>
@@ -302,7 +300,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Badge ouro</p>
+                    <p class="text-[15px]">Badge ouro</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -311,7 +309,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Cargo ouro</p>
+                    <p class="text-[15px]">Cargo ouro</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -320,7 +318,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         Chats exclusivos
                     </p>
                 </li>
@@ -331,7 +329,6 @@
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("3")}}
             primaryColor="#a928ff"
-            backgroundColor="#eed3ff"
         >
             <img
                 slot="image"
@@ -358,7 +355,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>2</span> XP em todo o bot
                     </p>
                 </li>
@@ -369,7 +366,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>1.75</span> no daily
                     </p>
                 </li>
@@ -380,7 +377,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>1.75</span> nas colheitas
                     </p>
                 </li>
@@ -394,7 +391,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Badge ametista</p>
+                    <p class="text-[15px]">Badge ametista</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -403,7 +400,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Cargo ametista</p>
+                    <p class="text-[15px]">Cargo ametista</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -412,7 +409,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         Chats exclusivos
                     </p>
                 </li>
@@ -423,7 +420,6 @@
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("4")}}
             primaryColor="#04b4f4"
-            backgroundColor="#defcff"
         >
             <img
                 slot="image"
@@ -450,7 +446,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>3</span> XP em todo o bot
                     </p>
                 </li>
@@ -461,7 +457,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>2</span> no daily
                     </p>
                 </li>
@@ -472,7 +468,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>2</span> nas colheitas
                     </p>
                 </li>
@@ -486,7 +482,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Badge topazio</p>
+                    <p class="text-[15px]">Badge topazio</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -495,7 +491,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Cargo topazio</p>
+                    <p class="text-[15px]">Cargo topazio</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -504,7 +500,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         Chats exclusivos
                     </p>
                 </li>
@@ -515,7 +511,6 @@
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("5")}}
             primaryColor="#12c50c"
-            backgroundColor="#d8ffd6"
         >
             <img
                 slot="image"
@@ -541,7 +536,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>5</span> XP em todo o bot
                     </p>
                 </li>
@@ -552,7 +547,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>3</span> no daily
                     </p>
                 </li>
@@ -563,7 +558,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>3</span> nas colheitas
                     </p>
                 </li>
@@ -577,7 +572,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Badge esmeralda</p>
+                    <p class="text-[15px]">Badge esmeralda</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -586,7 +581,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Cargo esmeralda</p>
+                    <p class="text-[15px]">Cargo esmeralda</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -595,7 +590,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         Chats exclusivos
                     </p>
                 </li>
@@ -606,7 +601,6 @@
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("6")}}
             primaryColor="#ff0000"
-            backgroundColor="#ffdada"
         >
             <img
                 slot="image"
@@ -633,7 +627,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>10</span> XP em todo o bot
                     </p>
                 </li>
@@ -644,7 +638,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>5</span> no daily
                     </p>
                 </li>
@@ -655,7 +649,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>5</span> nas colheitas
                     </p>
                 </li>
@@ -669,7 +663,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Badge rubi</p>
+                    <p class="text-[15px]">Badge rubi</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -678,7 +672,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Cargo rubi</p>
+                    <p class="text-[15px]">Cargo rubi</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -687,7 +681,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         Chats exclusivos
                     </p>
                 </li>
@@ -698,7 +692,6 @@
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("7")}}
             primaryColor="#4b8aff"
-            backgroundColor="#eff5ff"
         >
             <img
                 slot="image"
@@ -725,7 +718,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>15</span> XP em todo o bot
                     </p>
                 </li>
@@ -736,7 +729,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>10</span> no daily
                     </p>
                 </li>
@@ -747,7 +740,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>10</span> nas colheitas
                     </p>
                 </li>
@@ -761,7 +754,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Badge diamante</p>
+                    <p class="text-[15px]">Badge diamante</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -770,7 +763,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Cargo diamante</p>
+                    <p class="text-[15px]">Cargo diamante</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -779,7 +772,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         Chats exclusivos
                     </p>
                 </li>
@@ -790,7 +783,6 @@
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("8")}}
             primaryColor="#520072"
-            backgroundColor="#e0d1e6"
         >
             <img
                 slot="image"
@@ -817,7 +809,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>20</span> XP em todo o bot
                     </p>
                 </li>
@@ -828,7 +820,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>15</span> no daily
                     </p>
                 </li>
@@ -839,7 +831,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         <span>15</span> nas colheitas
                     </p>
                 </li>
@@ -853,7 +845,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Badge obsidiana</p>
+                    <p class="text-[15px]">Badge obsidiana</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -862,7 +854,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">Cargo obsidiana</p>
+                    <p class="text-[15px]">Cargo obsidiana</p>
                 </li>
                 <li class="flex flex-row items-center">
                     <Icon
@@ -871,7 +863,7 @@
                         height="16px"
                         class="mr-[5px]"
                     />
-                    <p class="text-[16px]">
+                    <p class="text-[15px]">
                         Chats exclusivos
                     </p>
                 </li>

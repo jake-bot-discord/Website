@@ -2,6 +2,7 @@
 
 export default {
     content: ['./src/**/*.{html,js,svelte,ts}'],
+    darkMode: "class",
 
     theme: {
         colors: {
@@ -18,6 +19,18 @@ export default {
             "gray": {
                 "1": "#555",
                 "2": "#9e9e9e"
+            },
+
+            "theme": {
+                "light": {
+                    "background": "#fff",
+                    "text": "#161616"
+                },
+
+                "dark": {
+                    "background": "#161616",
+                    "text": "#fff"
+                }
             }
         },
 

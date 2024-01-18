@@ -2,7 +2,10 @@
     import { onMount } from "svelte";
     import { userStoredValue } from "../../store/user"
     import { PUBLIC_API_URL } from "$env/static/public"
-    
+    import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte"
+    import Icon from "@iconify/svelte"
+    import { theme } from "../../store/theme";
+
     //imagens
     import Logo from "$lib/assets/jake-logo.png"
     
@@ -69,7 +72,7 @@
             <li class="flex items-center justify-center mx-[15px] text-[16px]">
                 <button>
                     <a href="/" class="flex items-center justify-center relative group cursor-pointer">
-                        <p> Suporte </p>
+                        <p class="text-[18px]"> Suporte </p>
                         <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
                     </a>
                 </button>
@@ -77,7 +80,7 @@
             <li class="flex items-center justify-center mx-[15px] text-[16px]">
                 <button>
                     <a href="/" class="flex items-center justify-center relative group cursor-pointer">
-                        <p> Documentação </p>
+                        <p class="text-[18px]"> Documentação </p>
                         <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
                     </a>
                 </button>
@@ -85,10 +88,13 @@
             <li class="flex items-center justify-center mx-[15px] text-[16px]">
                 <button>
                     <a href="/planos" class="flex items-center justify-center relative group cursor-pointer">
-                        <p> Planos </p>
+                        <p class="text-[18px]"> Planos </p>
                         <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
                     </a>
                 </button>
+            </li>
+            <li class="flex items-center justify-center mx-[15px]">
+                <ThemeSwitcher />
             </li>
         </ul>
     </div>
@@ -144,22 +150,26 @@
     </div>
 
     <div class="box md:hidden relative">
-        {#if !isNavOpen}
-            <button on:click|stopPropagation={handleNavOpen}>
-                <img src={ OpenMenu } alt="abrir_menu" class="w-[35px]">
-            </button>
-        {:else}
-            <button on:click|stopPropagation={handleNavClose}>
-                <img src={ CloseMenu } alt="fechar_menu" class="w-[35px]">
-            </button>
-        {/if}
+        <div class="box flex flex-row items-center justify-center">
+            <ThemeSwitcher />
+    
+            {#if !isNavOpen}
+                <button class="ml-[20px]" on:click|stopPropagation={handleNavOpen}>
+                    <Icon icon="ion:menu" height="35px"/>
+                </button>
+            {:else}
+                <button class="ml-[20px]" on:click|stopPropagation={handleNavClose}>
+                    <Icon icon="maki:cross" height="30px" />
+                </button>
+            {/if}
+        </div>
 
-        <div aria-hidden="true" on:click|stopPropagation={() => {}} class={`nav-drop ${isNavOpen ? "absolute" : "hidden"} top-[100%] right-[5px] bg-[#fff] rounded-b-[25px] rounded-tl-[25px] rounded-tr-[5px] border-[2px] border-solid border-[#e39b00]`}>
+        <div aria-hidden="true" on:click|stopPropagation={() => {}} class={`nav-drop ${isNavOpen ? "absolute" : "hidden"} top-[100%] right-[5px] bg-theme-light-background dark:bg-theme-dark-background rounded-b-[25px] rounded-tl-[25px] rounded-tr-[5px] border-[2px] border-solid border-[#e39b00]`}>
             <ul class="p-[15px]">
                 <li class="flex flex-row my-[10px] w-[160px]">
                     <button>
                         <a href="/" class="flex flex-row">
-                            <img src={ Suporte } alt="suporte_icon" class="w-[20px] mr-[8px]">
+                            <Icon icon="tabler:headset" height="20px" class="mr-[8px]" color={!$theme ? "#212121" : "#fff"}/>
                             <p> Suporte </p>
                             <span />
                         </a>
@@ -169,7 +179,7 @@
                 <li class="flex flex-row my-[10px] w-[160px]">
                     <button>
                         <a href="/" class="flex flex-row">
-                            <img src={ Document } alt="docs_icon" class="w-[20px] mr-[8px]">
+                            <Icon icon="simple-icons:googledocs" height="20px" class="mr-[8px]" color={!$theme ? "#212121" : "#fff"}/>
                             <p> Documentação </p>
                             <span />
                         </a>
@@ -179,7 +189,7 @@
                 <li class="flex flex-row my-[10px] w-[160px]">
                     <button>
                         <a href="/planos" class="flex flex-row">
-                            <img src={ Moeda } alt="coin_icon" class="w-[20px] mr-[8px]">
+                            <Icon icon="tabler:coin" height="20px" class="mr-[8px]" color={!$theme ? "#212121" : "#fff"}/>
                             <p> Planos </p>
                             <span />
                         </a>
@@ -194,8 +204,6 @@
                                 <p class="text-[#fff] font-medium text-[15px]">Login</p>
                             </a>
                         </button>
-                        <!-- <img src={ Login } alt="dashboard" class="w-[20px] mr-[8px]">
-                        <p>Login</p> -->
                     </li>
 
                 {:else}
@@ -207,7 +215,7 @@
                     <li class="flex flex-row my-[10px] w-[160px]">
                         <button>
                             <a href="/" class="flex flex-row">
-                                <img src={ Dashboard } alt="dashboard" class="w-[20px] mr-[8px]">
+                                <Icon icon="humbleicons:dashboard" height="20px" class="mr-[8px]" color={!$theme ? "#212121" : "#fff"}/>
                                 <p>Dashboard</p>
                             </a>
                         </button>
@@ -216,7 +224,7 @@
                     <li class="flex flex-row my-[10px] w-[160px]">
                         <button>
                             <a href="/" class="flex flex-row">
-                                <img src={ Profile } alt="profile" class="w-[16px] mx-[4px] mr-[8px]">
+                                <Icon icon="iconamoon:profile-fill" height="20px" class="mr-[8px]" color={!$theme ? "#212121" : "#fff"}/>
                                 <p>Perfil</p>
                             </a>
                         </button>
@@ -225,7 +233,7 @@
                     <li class="flex flex-row my-[10px] w-[160px]">
                         <button>
                             <a href="/" class="flex flex-row">
-                                <img src={ Logout } alt="logout" class="w-[16px] mx-[4px] mr-[8px]">
+                                <Icon icon="uis:signout" color="#ff1212" height="20px" class="mr-[8px]"/>
                                 <p class="text-highlite-red">Sair</p>
                             </a>
                         </button>

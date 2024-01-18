@@ -36,7 +36,7 @@
 
 </script>
 
-<div class="vip-card flex flex-col justify-center w-[280px] md:w-[250px] p-[30px] m-[20px] md:m-[20px] rounded-[20px]" style={`background-color: ${backgroundColor}`}>
+<div class="vip-card flex flex-col justify-center w-[280px] md:w-[250px] p-[30px] m-[20px] md:m-[20px] rounded-[20px]" style={`background-color: ${primaryColor}20; border-width: 2px; border-color: ${primaryColor}; border-style: solid`}>
     <div class="vip-header flex flex-row justify-between w-[100%]">
         <div class="icon w-[90px]">
             <slot name="image"></slot>
@@ -56,17 +56,17 @@
         </div>
     </div>
     <div class="buttons flex flex-col w-[100%] items-center justify-center">
-        <!-- {#if _user} -->
+        {#if _user}
             <button on:click|stopPropagation={() => {setVipType(), showModalFunction()}} class="purchase-button flex w-[110px] h-[50px] items-center justify-center p-[10px] px-[20px] rounded-[8px] mb-[20px] active:grayscale-[30%] duration-100 hover:w-[120px] hover:duration-150" style={`background-color: ${primaryColor}`}>
                 <p class="text-[#fff] font-medium">Comprar</p>
             </button>
-        <!-- {:else}
+        {:else}
             <button class="login-button flex w-[110px] h-[50px] items-center justify-center p-[10px] px-[20px] rounded-[8px] mb-[20px] active:grayscale-[30%] duration-100 hover:w-[120px] hover:duration-150" style={`background-color: ${primaryColor}`}>
                 <a href={`${PUBLIC_API_URL}/auth/login`}>
                     <p class="text-[#fff] font-medium">Login</p>
                 </a>
             </button>
-        {/if} -->
+        {/if}
 
         <button on:click|stopPropagation={handleOpenCard} class={`expand ${!isCardOpen ? "flex" : "hidden"} flex-row justify-center items-center relative`}>
             <p class="text-[14px]">Ver mais</p> <Icon icon="eva:arrow-down-fill" color={primaryColor} height="25px" />
