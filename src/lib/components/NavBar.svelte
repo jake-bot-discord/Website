@@ -66,17 +66,29 @@
 
     <div class="box hidden md:flex">
         <ul class="flex flex-row">
-            <li class="flex items-center justify-center relative mx-[15px] text-[16px] group cursor-pointer">
-                <p> Suporte </p>
-                <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
+            <li class="flex items-center justify-center mx-[15px] text-[16px]">
+                <button>
+                    <a href="/" class="flex items-center justify-center relative group cursor-pointer">
+                        <p> Suporte </p>
+                        <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
+                    </a>
+                </button>
             </li>
-            <li class="flex items-center justify-center relative mx-[15px] text-[16px] group cursor-pointer">
-                <p> Documentação </p>
-                <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
+            <li class="flex items-center justify-center mx-[15px] text-[16px]">
+                <button>
+                    <a href="/" class="flex items-center justify-center relative group cursor-pointer">
+                        <p> Documentação </p>
+                        <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
+                    </a>
+                </button>
             </li>
-            <li class="flex items-center justify-center relative mx-[15px] text-[16px] group cursor-pointer">
-                <p> Planos </p>
-                <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
+            <li class="flex items-center justify-center mx-[15px] text-[16px]">
+                <button>
+                    <a href="/planos" class="flex items-center justify-center relative group cursor-pointer">
+                        <p> Planos </p>
+                        <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
+                    </a>
+                </button>
             </li>
         </ul>
     </div>
@@ -145,21 +157,33 @@
         <div aria-hidden="true" on:click|stopPropagation={() => {}} class={`nav-drop ${isNavOpen ? "absolute" : "hidden"} top-[100%] right-[5px] bg-[#fff] rounded-b-[25px] rounded-tl-[25px] rounded-tr-[5px] border-[2px] border-solid border-[#e39b00]`}>
             <ul class="p-[15px]">
                 <li class="flex flex-row my-[10px] w-[160px]">
-                    <img src={ Suporte } alt="suporte_icon" class="w-[20px] mr-[8px]">
-                    <p> Suporte </p>
-                    <span />
+                    <button>
+                        <a href="/" class="flex flex-row">
+                            <img src={ Suporte } alt="suporte_icon" class="w-[20px] mr-[8px]">
+                            <p> Suporte </p>
+                            <span />
+                        </a>
+                    </button>
                 </li>
 
                 <li class="flex flex-row my-[10px] w-[160px]">
-                    <img src={ Document } alt="docs_icon" class="w-[20px] mr-[8px]">
-                    <p> Documentação </p>
-                    <span />
+                    <button>
+                        <a href="/" class="flex flex-row">
+                            <img src={ Document } alt="docs_icon" class="w-[20px] mr-[8px]">
+                            <p> Documentação </p>
+                            <span />
+                        </a>
+                    </button>
                 </li>
                 
                 <li class="flex flex-row my-[10px] w-[160px]">
-                    <img src={ Moeda } alt="coin_icon" class="w-[20px] mr-[8px]">
-                    <p> Planos </p>
-                    <span />
+                    <button>
+                        <a href="/planos" class="flex flex-row">
+                            <img src={ Moeda } alt="coin_icon" class="w-[20px] mr-[8px]">
+                            <p> Planos </p>
+                            <span />
+                        </a>
+                    </button>
                 </li>
 
                 {#if !_user}
@@ -181,18 +205,30 @@
                     </li>
                     
                     <li class="flex flex-row my-[10px] w-[160px]">
-                        <img src={ Dashboard } alt="dashboard" class="w-[20px] mr-[8px]">
-                        <p>Dashboard</p>
+                        <button>
+                            <a href="/" class="flex flex-row">
+                                <img src={ Dashboard } alt="dashboard" class="w-[20px] mr-[8px]">
+                                <p>Dashboard</p>
+                            </a>
+                        </button>
                     </li>
 
                     <li class="flex flex-row my-[10px] w-[160px]">
-                        <img src={ Profile } alt="profile" class="w-[16px] mx-[4px] mr-[8px]">
-                        <p>Perfil</p>
+                        <button>
+                            <a href="/" class="flex flex-row">
+                                <img src={ Profile } alt="profile" class="w-[16px] mx-[4px] mr-[8px]">
+                                <p>Perfil</p>
+                            </a>
+                        </button>
                     </li>
 
                     <li class="flex flex-row my-[10px] w-[160px]">
-                        <img src={ Logout } alt="logout" class="w-[16px] mx-[4px] mr-[8px]">
-                        <p class="text-highlite-red">Sair</p>
+                        <button>
+                            <a href="/" class="flex flex-row">
+                                <img src={ Logout } alt="logout" class="w-[16px] mx-[4px] mr-[8px]">
+                                <p class="text-highlite-red">Sair</p>
+                            </a>
+                        </button>
                     </li>
 
                 {/if}

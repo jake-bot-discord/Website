@@ -1,0 +1,97 @@
+{
+    "1": {
+        "id": "1",
+        "name": "Quartzo",
+        "prices": {
+            "month": 2.99,
+            "quarter": 7.90,
+            "year": 29.90
+        },
+        "primaryColor": "#979797",
+        "backgroundColor": "#f8f8f8"
+    },
+    
+    "2": {
+        "id": "2",
+        "name": "Ouro",
+        "prices": {
+            "month": 2.99,
+            "quarter": 7.90,
+            "year": 29.90
+        },   
+        "primaryColor": "#ffa928",
+        "backgroundColor": "#fff2c9"
+    },
+    
+    "3": {
+        "id": "3",
+        "name": "Ametista",
+        "prices": {
+            "month": 2.99,
+            "quarter": 7.90,
+            "year": 29.90
+        },
+        "primaryColor": "#a928ff",
+        "backgroundColor": "#eed3ff"
+    },
+    
+    "4": {
+        "id": "4",
+        "name": "Topázio",
+        "prices": {
+            "month": 2.99,
+            "quarter": 7.90,
+            "year": 29.90
+        },
+        "primaryColor": "#04b4f4",
+        "backgroundColor": "#defcff"
+    },
+    
+    "5": {
+        "id": "5",
+        "name": "Esmeralda",
+        "prices": {
+            "month": 2.99,
+            "quarter": 7.90,
+            "year": 29.90
+        },
+        "primaryColor": "#12c50c",
+        "backgroundColor": "#d8ffd6"
+    },
+    
+    "6": {
+        "id": "6",
+        "name": "Rubi",
+        "prices": {
+            "month": 2.99,
+            "quarter": 7.90,
+            "year": 29.90
+        },
+        "primaryColor": "#ff0000",
+        "backgroundColor": "#ffdada"
+    },
+    
+    "7": {
+        "id": "7",
+        "name": "Diamante",
+        "prices": {
+            "month": 2.99,
+            "quarter": 7.90,
+            "year": 29.90
+        },
+        "primaryColor": "#4b8aff",
+        "backgroundColor": "#eff5ff"
+    },
+    
+    "8": {
+        "id": "8",
+        "name": "Obsidiana",
+        "prices": {
+            "month": 2.99,
+            "quarter": 7.90,
+            "year": 29.90
+        },
+        "primaryColor": "#520072",
+        "backgroundColor": "#e0d1e6"
+    }
+}
