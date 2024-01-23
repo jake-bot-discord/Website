@@ -70,7 +70,7 @@
                     </div>
                     <div class="infos-container flex flex-col items-center justify-center">
                         <div class="title m-[20px]">
-                            <h1 class="text-[30px] font-semibold" style={`color: ${selectedVip.primaryColor}`}>VIP {selectedVip.name}</h1>
+                            <h1 class="text-[30px] font-semibold" style={`color: ${selectedVip.color}`}>VIP {selectedVip.name}</h1>
                         </div>
                         <div class="prices flex flex-col justify-center items-center">
                             <div class="calc flex flex-row justify-between w-[200px]">
@@ -109,11 +109,11 @@
                                 </div>
                             </div>
 
-                            <hr class="flex w-[200px] my-[15px] border-solid border-[1px] rounded-full" style={`border-color: ${selectedVip.primaryColor}`}>
+                            <hr class="flex w-[200px] my-[15px] border-solid border-[1px] rounded-full" style={`border-color: ${selectedVip.color}`}>
 
                             <div class="total flex flex-row justify-between w-[200px]">
                                 <div class="info">
-                                    <p class="font-medium" style={`color: ${selectedVip.primaryColor}`}>
+                                    <p class="font-medium" style={`color: ${selectedVip.color}`}>
                                         Valor total:
                                     </p>
                                 </div>
@@ -147,7 +147,7 @@
         <Card
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("1")}}
-            primaryColor="#979797"
+            color="#979797"
         >
             <img
                 slot="image"
@@ -237,7 +237,7 @@
         <Card
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("2")}}
-            primaryColor="#ffa928"
+            color="#ffa928"
         >
             <img
                 slot="image"
@@ -328,7 +328,7 @@
         <Card
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("3")}}
-            primaryColor="#a928ff"
+            color="#a928ff"
         >
             <img
                 slot="image"
@@ -419,7 +419,7 @@
         <Card
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("4")}}
-            primaryColor="#04b4f4"
+            color="#04b4f4"
         >
             <img
                 slot="image"
@@ -510,7 +510,7 @@
         <Card
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("5")}}
-            primaryColor="#12c50c"
+            color="#12c50c"
         >
             <img
                 slot="image"
@@ -600,7 +600,7 @@
         <Card
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("6")}}
-            primaryColor="#ff0000"
+            color="#ff0000"
         >
             <img
                 slot="image"
@@ -691,7 +691,7 @@
         <Card
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("7")}}
-            primaryColor="#4b8aff"
+            color="#4b8aff"
         >
             <img
                 slot="image"
@@ -782,7 +782,7 @@
         <Card
             on:open={handleOpenModal}
             on:vipType={() => {selectVip("8")}}
-            primaryColor="#520072"
+            color="#520072"
         >
             <img
                 slot="image"

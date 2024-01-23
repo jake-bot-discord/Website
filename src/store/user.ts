@@ -6,9 +6,14 @@ export const userStoredValue = readable(null, (set: any) => {
     let user
 
     const req = async () => {
-        const res = await axios.get(`${PUBLIC_API_URL}/auth/status`, { withCredentials: true })
-
-        set(res.data)
+        try {
+            const res = await axios.get(`${PUBLIC_API_URL}/auth/session`, { withCredentials: true })
+    
+    
+            set(res.data.updatedUserData)
+        } catch(err) {
+            console.log("Houve um erro ao pegar a session", err)
+        }
     }    
 
     req()
