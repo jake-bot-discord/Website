@@ -10,21 +10,10 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    container: pandoc/latex
     steps:
-      - name: delete .git
-        run: rm -rf .git
-      - name: delete .github
-        run: rm -rf .github
-      - name: Pushes to another repository
-        id: push_directory
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+      - name: Clone 
+        uses: GuillaumeFalourd/clone-github-repo-action@v2.3
         with:
-          source-directory: '.'
-          destination-github-username: 'jake-bot-discord'
-          destination-repository-name: 'Website'
-          user-email: biancadcastro2501@gmail.com
-          target-branch: main
-          create-target-branch-if-needed: true
+          owner: 'jake-bot-discord'
+          repository: 'Website'
+          access-token: ${{ secrets.PAT_KEY }}
