@@ -17,3 +17,5 @@ svelte.config.js
 vite.config.ts
 discloud.config
 index.ts
+github_push
+github_push.pub
