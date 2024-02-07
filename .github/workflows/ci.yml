@@ -12,6 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     container: pandoc/latex
     steps:
+      - name: delete .git
+        run: rm -rf .git
+      - name: delete .github
+        run: rm -rf .github
       - name: Pushes to another repository
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@main
