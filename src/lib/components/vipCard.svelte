@@ -55,17 +55,17 @@
         </div>
     </div>
     <div class="buttons flex flex-col w-[100%] items-center justify-center">
-        {#if _user}
+        <!-- {#if _user} -->
             <button on:click|stopPropagation={() => {setVipType(), showModalFunction()}} class="purchase-button flex w-[110px] h-[50px] items-center justify-center p-[10px] px-[20px] rounded-[8px] mb-[20px] active:grayscale-[30%] duration-100 hover:w-[120px] hover:duration-150" style={`background-color: ${color}`}>
                 <p class="text-[#fff] font-medium">Comprar</p>
             </button>
-        {:else}
+        <!-- {:else}
             <button class="login-button flex w-[110px] h-[50px] items-center justify-center p-[10px] px-[20px] rounded-[8px] mb-[20px] active:grayscale-[30%] duration-100 hover:w-[120px] hover:duration-150" style={`background-color: ${color}`}>
                 <a href={`${PUBLIC_API_URL}/auth/login`}>
                     <p class="text-[#fff] font-medium">Login</p>
                 </a>
             </button>
-        {/if}
+        {/if} -->
 
         <button on:click|stopPropagation={handleOpenCard} class={`expand ${!isCardOpen ? "flex" : "hidden"} flex-row justify-center items-center relative`}>
             <p class="text-[14px]">Ver mais</p> <Icon icon="eva:arrow-down-fill" color={color} height="25px" />

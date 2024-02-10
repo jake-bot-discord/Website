@@ -47,6 +47,8 @@
             selectedVip = vip[1]
         }
     }
+
+    let quantity = "month"
 </script>
 
 <svelte:head>
@@ -57,7 +59,7 @@
     <Modal show={showModal} on:close={handleCloseModal}>
         <div class="modal-content flex flex-row w-[100%] h-[100%] justify-center">
             {#if selectedVip}
-                <!-- <div class="modal-col flex flex-col justify-center items-center w-[50%] animate-slideLeft">
+                <div class="modal-col flex flex-col justify-center items-center w-[50%] animate-slideLeft">
                     <div class="vip-icon flex w-[150px] h-[150px] items-center justify-center">
                         {#if selectedVip.name == "Quartzo"} <img src={ Quartzo } alt="vip-icon" class="flex w-[150px]"> {/if}
                         {#if selectedVip.name == "Ouro"} <img src={ Ouro } alt="vip-icon" class="flex w-[150px]"> {/if}
@@ -70,7 +72,7 @@
                     </div>
                     <div class="infos-container flex flex-col items-center justify-center">
                         <div class="title m-[20px]">
-                            <h1 class="text-[30px] font-semibold" style={`color: ${selectedVip.color}`}>VIP {selectedVip.name}</h1>
+                            <h1 class="text-[30px] font-semibold" style={`color: ${selectedVip.primaryColor}`}>VIP {selectedVip.name}</h1>
                         </div>
                         <div class="prices flex flex-col justify-center items-center">
                             <div class="calc flex flex-row justify-between w-[200px]">
@@ -92,12 +94,12 @@
                                     <ul>
                                         <li class="text-right">
                                             <p>
-                                                { new Intl.NumberFormat('PT-BR', { style: 'currency', currency: 'BRL' }).format(selectedVip.prices.month * (quantity == "month" ? 1 : 1) * (quantity == "quarter" ? 3 : 1) * (quantity == "year" ? 12 : 1)) }
+                                                { new Intl.NumberFormat('PT-BR', { style: 'currency', currency: 'BRL' }).format(selectedVip.prices.month) }
                                             </p>
                                         </li>
                                         <li class="text-right">
                                             <p>
-                                                { new Intl.NumberFormat('PT-BR', { style: 'currency', currency: 'BRL' }).format((selectedVip.prices.month * (quantity == "month" ? 1 : 1) * (quantity == "quarter" ? 3 : 1) * (quantity == "year" ? 12 : 1) - selectedVip.prices[quantity]) ) }
+                                                { new Intl.NumberFormat('PT-BR', { style: 'currency', currency: 'BRL' }).format(selectedVip.prices.month ) }
                                             </p>
                                         </li>
                                         <li class="text-right">
@@ -109,24 +111,24 @@
                                 </div>
                             </div>
 
-                            <hr class="flex w-[200px] my-[15px] border-solid border-[1px] rounded-full" style={`border-color: ${selectedVip.color}`}>
+                            <hr class="flex w-[200px] my-[15px] border-solid border-[1px] rounded-full" style={`border-color: ${selectedVip.primaryColor}`}>
 
                             <div class="total flex flex-row justify-between w-[200px]">
                                 <div class="info">
-                                    <p class="font-medium" style={`color: ${selectedVip.color}`}>
+                                    <p class="font-medium" style={`color: ${selectedVip.primaryColor}`}>
                                         Valor total:
                                     </p>
                                 </div>
 
                                 <div class="data">
                                     <p>
-                                        { new Intl.NumberFormat('PT-BR', { style: 'currency', currency: 'BRL' }).format(selectedVip.prices[quantity])}
+                                        { new Intl.NumberFormat('PT-BR', { style: 'currency', currency: 'BRL' }).format(selectedVip.prices.month)}
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 
                 <div class="modal-col flex flex-col items-center justify-center w-[50%] animate-slideRight">
                     <img src={ Building } alt="development-icon" class="w-60 m-2">
