@@ -3,8 +3,6 @@
     import { theme } from "../../store/theme";
     import Icon from "@iconify/svelte";
 
-    let darkMode = false
-
     const switchTheme = () => {
         theme.set(!$theme)
 

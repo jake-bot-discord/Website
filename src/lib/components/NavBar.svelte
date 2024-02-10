@@ -13,12 +13,7 @@
     import Profile from "$lib/icons/profile.svg"
     import Logout from "$lib/icons/logout.svg"
     import Dashboard from "$lib/icons/dashboard.svg"
-    import OpenMenu from "$lib/icons/menu.svg"
-    import CloseMenu from "$lib/icons/close.svg"
-    import Document from "$lib/icons/docs.svg"
-    import Moeda from "$lib/icons/moeda.svg"
-    import Suporte from "$lib/icons/suporte.svg"
-    import Login from "$lib/icons/login.svg"
+    import axios from "axios";
 
     /**
      * @type {any}
@@ -58,6 +53,17 @@
         		
         document.body.removeEventListener('click', handleNavClose)
 	}
+
+    const logout = async () => {
+        console.log("desconectando")
+        try {
+            await axios.get(`${PUBLIC_API_URL}/auth/logout`, { withCredentials: true })
+    
+            location.reload()
+        } catch(err) {
+            console.log(err)
+        }
+    }
 </script>
 
 <nav class="flex flex-row justify-between items-center px-[10px]">
@@ -138,10 +144,10 @@
       
                         <li class="mt-[10px] w-[100%] group">
                             <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-6px] bg-primary-2 absolute opacity-0 group-hover:animate-fade" />
-                            <a href="/" class="flex flex-row items-center justify-start">
+                            <button on:click={() => logout()} class="flex flex-row items-center justify-start">
                                 <img src={ Logout } alt="logout" class="w-[16px] mx-[4px]">
                                 <p class="text-highlite-red">Sair</p>
-                            </a>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -232,10 +238,10 @@
 
                     <li class="flex flex-row my-[10px] w-[160px]">
                         <button>
-                            <a href="/" class="flex flex-row">
+                            <button on:click={() => logout()} class="flex flex-row">
                                 <Icon icon="uis:signout" color="#ff1212" height="20px" class="mr-[8px]"/>
                                 <p class="text-highlite-red">Sair</p>
-                            </a>
+                            </button>
                         </button>
                     </li>
 
