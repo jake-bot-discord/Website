@@ -12,3 +12,16 @@ body {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     @apply bg-theme-light-background dark:bg-theme-dark-background text-theme-light-text dark:text-theme-dark-text;
 }
+
+body::-webkit-scrollbar {
+    width: 6px;
+}
+  
+body::-webkit-scrollbar-track {
+    background: none;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #fc9304;
+    border-radius: 20px;
+}
