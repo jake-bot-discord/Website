@@ -24,7 +24,7 @@ export default {
             "theme": {
                 "light": {
                     "background": "#fff",
-                    "text": "#161616"
+                    "text": "#515151"
                 },
 
                 "dark": {
