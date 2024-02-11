@@ -22,8 +22,6 @@
         userStoredValue.subscribe(user => {
             userData = user
         })
-
-        console.log(userData)
     })
 
     let showModal = false;

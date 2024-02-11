@@ -10,10 +10,9 @@
     import Logo from "$lib/assets/jake-logo.png"
     
     //icones
-    import Profile from "$lib/icons/profile.svg"
     import Logout from "$lib/icons/logout.svg"
-    import Dashboard from "$lib/icons/dashboard.svg"
     import axios from "axios";
+    import { goto } from "$app/navigation";
 
     /**
      * @type {any}
@@ -55,7 +54,6 @@
 	}
 
     const logout = async () => {
-        console.log("desconectando")
         try {
             await axios.get(`${PUBLIC_API_URL}/auth/logout`, { withCredentials: true })
     
@@ -68,35 +66,29 @@
 
 <nav class="flex flex-row justify-between items-center px-[10px]">
     <div class="box bg-purple-100 w-[70px] flex justify-center items-center">
-        <a href="/">
+        <button on:click={() => goto("/")}>
             <img src={ Logo } alt="logo" class="w-[100px] md:w-[70px]">
-        </a>
+        </button>
     </div>
 
     <div class="box hidden md:flex">
         <ul class="flex flex-row">
             <li class="flex items-center justify-center mx-[15px] text-[16px]">
-                <button>
-                    <a href="/" class="flex items-center justify-center relative group cursor-pointer">
+                <button on:click={() => goto("/")} class="flex items-center justify-center relative group cursor-pointer">
                         <p class="text-[18px]"> Suporte </p>
                         <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
-                    </a>
                 </button>
             </li>
             <li class="flex items-center justify-center mx-[15px] text-[16px]">
-                <button>
-                    <a href="/" class="flex items-center justify-center relative group cursor-pointer">
+                <button on:click={() => goto("/")} class="flex items-center justify-center relative group cursor-pointer">
                         <p class="text-[18px]"> Documentação </p>
                         <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
-                    </a>
                 </button>
             </li>
             <li class="flex items-center justify-center mx-[15px] text-[16px]">
-                <button>
-                    <a href="/planos" class="flex items-center justify-center relative group cursor-pointer">
+                <button on:click={() => goto("/planos")} class="flex items-center justify-center relative group cursor-pointer">
                         <p class="text-[18px]"> Planos </p>
                         <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
-                    </a>
                 </button>
             </li>
             <li class="flex items-center justify-center mx-[15px]">
@@ -120,24 +112,24 @@
                     </button>
                 </span>
 
-                <div aria-hidden="true" on:click|stopPropagation={() => {}} class={`user-nav ${isMenuOpen ? "flex" : "hidden"} justify-center items-center absolute border-primary-2 border-[3px] w-[150px] px-[10px] py-[15px] top-[65px] right-[25px] rounded-2xl animate-fade transition-[.5s]`}>
+                <div aria-hidden="true" on:click|stopPropagation={() => {}} class={`user-nav ${isMenuOpen ? "flex" : "hidden"} justify-center items-center absolute border-primary-2 border-[3px] w-[150px] px-[10px] py-[15px] top-[65px] right-[25px] rounded-2xl animate-fade transition-[.5s] bg-theme-light-background dark:bg-theme-dark-background`}>
                     <ul class="flex flex-col items-center">
                         <li class="mb-[10px] w-[100%] group">
                             <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-6px] bg-primary-2 absolute opacity-0 group-hover:animate-fade" />
-                            <a href="/" class="flex flex-row items-center justify-start">
-                                <img src={ Dashboard } alt="dashboard" class="w-[20px] mr-[4px]">
-                                <p>Dashboard</p>
-                            </a>
+                            <button on:click={() => goto("/dashboard/guilds")} class="flex flex-row items-center justify-start">
+                                <Icon icon="akar-icons:dashboard" color={$theme ? "#fff" : "#000"} class="mx-[4px]"/>
+                                <p>Servidores</p>
+                            </button>
                         </li>
       
                         <hr class="w-[80px] border-[#8a8a8a8c] border-4px rounded-full">
       
                         <li class="my-[10px] w-[100%] group">
                             <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-6px] bg-primary-2 absolute opacity-0 group-hover:animate-fade" />
-                            <a href="/" class="flex flex-row items-center justify-start">
-                                <img src={ Profile } alt="profile" class="w-[16px] mx-[4px]">
+                            <button on:click={() => goto("/")} class="flex flex-row items-center justify-start">
+                                <Icon icon="solar:user-bold" color={$theme ? "#fff" : "#000"} class="mx-[4px]"/>
                                 <p>Perfil</p>
-                            </a>
+                            </button>
                         </li>
       
                         <hr class="w-[80px] border-[#8a8a8a8c] border-4px rounded-full">

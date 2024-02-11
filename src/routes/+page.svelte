@@ -8,9 +8,6 @@
     import Proteção from "$lib/assets/proteção-2.png"
     import Funções from "$lib/assets/funções.png"
     import Planta from "$lib/assets/planta.png"
-
-    import Check from "$lib/icons/check.svg"
-    import Diamond from "$lib/icons/diamond.svg"
 </script>
 
 <svelte:head>
@@ -151,7 +148,7 @@
                 </li>
                 
                 <li class="h-[70px] bg-[#559cff71] flex items-center justify-center flex-row my-[20px] p-[20px] rounded-xl">
-                    <Icon icon="tabler:diamond-filled" color={$theme ? "#4dc7ff" : "#046dfc"} height="30px" />
+                    <Icon icon="tabler:diamond-filled" color={$theme ? "#4dc7ff" : "#046dfc"} height="30px" class="m-[5px]"/>
 
                     <p class="text-[15px] ">Algumas funções extras estão disponiveis para <span class="text-highlite-blue dark:text-[#4dc7ff]"><u><a href="/planos">doadores</a></u></span></p>
                 </li>
