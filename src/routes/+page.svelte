@@ -12,6 +12,16 @@
 
 <svelte:head>
     <title>Home - Jake</title>
+
+    <meta property="og:type" content="website" />
+	<meta property="og:url" content="https://jakebot.com.br" />
+	<meta property="og:title" content="Jake Bot" />
+	<meta property="og:description" content="O bot gratuito que faz tudo que bots pagos não fazem! Alem de ser um projeto completo e seguro, o Jake é completamente gratuito e sem fins lucrativos!" />
+
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://jakebot.com.br" />
+	<meta property="twitter:title" content="Jake Bot " />
+	<meta property="twitter:description" content="O bot gratuito que faz tudo que bots pagos não fazem! Alem de ser um projeto completo e seguro, o Jake é completamente gratuito e sem fins lucrativos!" />
 </svelte:head>
 
 <div class="container flex flex-column md:m-auto md:w-[80%] ">
