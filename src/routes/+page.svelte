@@ -30,7 +30,7 @@
             <img src={ Icone } alt="icone" class="w-[220px] md:w-[280px]">
         </div>
         <div class="col">
-            <h1 class="text-primary-2">Seja bem vindo!</h1>
+            <h1 class="text-primary">Seja bem vindo!</h1>
 
             <p class="my-[5px] md:my-[20px] text-[18px]">O Jake é um simples bot de funções gerais como moderação, economia, musica, e muito mais! Alem de tudo, é um bot gratuito, e com um suporte 24/7!</p>
 
@@ -41,7 +41,7 @@
                     </a>
                 </button>
 
-                <button class="group group-hover:brightness-75 bg-primary-2">
+                <button class="group group-hover:brightness-75 bg-primary">
                     <a href="/">
                         <p>Saiba mais!</p>
                     </a>
@@ -55,12 +55,12 @@
             <img src={ Fazendas } alt="fazendas" class="w-[220px] md:w-[280px]">
         </div>
         <div class="col">
-            <h1 class="text-primary-2">Sistema de fazendas!</h1>
+            <h1 class="text-primary">Sistema de fazendas!</h1>
 
             <p class="my-[5px] md:my-[20px] text-[18px]">O Jake possui um sistema de fazendinhas onde você pode plantar diversos vegetais, cuidar de animais, e muito mais! E tudo dentro do próprio bot e de forma gratuita para todos! </p>
 
             <div class="buttons my-[10px]">
-                <button class="group group-hover:brightness-75 bg-primary-2">
+                <button class="group group-hover:brightness-75 bg-primary">
                     <a href="/">
                         <p>Saiba mais!</p>
                     </a>
@@ -74,12 +74,12 @@
             <img src={ Proteção } alt="proteção" class="w-[220px] md:w-[280px]">
         </div>
         <div class="col">
-            <h1 class="text-primary-2">Moderação gratuita!</h1>
+            <h1 class="text-primary">Moderação gratuita!</h1>
 
             <p class="my-[5px] md:my-[20px] text-[18px]">Ao contario de muitos bots, o sistema de moderação do Jake é completamente gratuito! E possui funções como contador de membros, anti invites, logs, e muito mais! Tambem possui suporte 24h para esclarecer qualquer duvida que apareça!</p>
 
             <div class="buttons my-[10px]">
-                <button class="group group-hover:brightness-75 bg-primary-2">
+                <button class="group group-hover:brightness-75 bg-primary">
                     <a href="/">
                         <p>Saiba mais!</p>
                     </a>
@@ -93,12 +93,12 @@
             <img src={ Pishing } alt="anti-invites" class="w-[220px] md:w-[280px]">
         </div>
         <div class="col">
-            <h1 class="text-primary-2">Anti invites e pishing/scamm!</h1>
+            <h1 class="text-primary">Anti invites e pishing/scamm!</h1>
 
             <p class="my-[5px] md:my-[20px] text-[18px]">Alem de tudo, o Jake ainda possui um sistema de Anti invites e pishing/scamm que evita que pessoas mal intensionadas enviem links suspeitos/perigosos em seus chats, tornando seu servidor mais seguro!</p>
 
             <div class="buttons my-[10px]">
-                <button class="group group-hover:brightness-75 bg-primary-2">
+                <button class="group group-hover:brightness-75 bg-primary">
                     <a href="/">
                         <p>Saiba mais!</p>
                     </a>
@@ -112,7 +112,7 @@
             <img src={ Funções } alt="anti-invites" class="w-[220px] md:w-[280px]">
         </div>
         <div class="col">
-            <h1 class="text-primary-2">Por que escolher o Jake?</h1>
+            <h1 class="text-primary">Por que escolher o Jake?</h1>
             
             <ul class="features-list w-[100%]">
                 <li class="flex flex-row my-[4px] items-center">
@@ -171,12 +171,12 @@
             <img src={ Planta } alt="anti-invites" class="w-[220px] md:w-[280px]">
         </div>
         <div class="col">
-            <h1 class="text-primary-2">Regue a plantinha</h1>
+            <h1 class="text-primary">Regue a plantinha</h1>
 
             <p class="my-[5px] md:my-[20px] text-[18px]">Apesar dele ser um projeto gratuito, o Jake é como uma plantinha, precisa de água pra crescer. Você pode ajuda-lo se tornando um doador. Clica abaixo pra saber mais!</p>
 
             <div class="buttons my-[10px]">
-                <button class="group group-hover:brightness-75 bg-primary-2">
+                <button class="group group-hover:brightness-75 bg-primary">
                     <a href="/">
                         <p>Seja um doador!</p>
                     </a>
