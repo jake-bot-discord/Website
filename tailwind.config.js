@@ -6,10 +6,7 @@ export default {
 
     theme: {
         colors: {
-            "primary": {
-                "1": "#ffae00",
-                "2": "#fc9304"
-            },
+            "primary": "#fc9304",
             "highlite": {
                 "blue": "#046dfc",
                 "red": "#ff1212",
@@ -80,6 +77,23 @@ export default {
                         opacity: "100%",
                         transform: "translateY(0)"
                     }
+                },
+
+                slideTop: {
+                    "0%": {
+                        opacity: "0%",
+                        transform: "translateY(-100px)"
+                    },
+
+                    "50%": {
+                        opacity: "0%",
+                        transform: "translateY(-30px)"
+                    },
+
+                    "100%": {
+                        opacity: "100%",
+                        transform: "translateY(0)"
+                    }
                 }
             },
 
@@ -88,6 +102,7 @@ export default {
                 slideRight: 'slideRight .4s linear 1 alternate',
                 slideLeft: 'slideLeft .4s linear 1 alternate',
                 slideBotton: 'slideBotton .4s linear 1 alternate',
+                slideTop: 'slideTop .4s linear 1 alternate',
             },
 
             fontFamily: {
