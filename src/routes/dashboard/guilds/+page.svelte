@@ -44,7 +44,7 @@
 <div class="container flex flex-col mx-[40px] my-[20px] mb-[100px] w-[100%]">
     <div class="page-header w-[100%] px-[40px]">
         <div class="flex flex-row justify-between items-center">
-            <h1 class="text-primary-2 font-medium text-[30px]">Servidores</h1>
+            <h1 class="text-primary font-medium text-[30px]">Servidores</h1>
         </div>
 
         <hr class="flex w-[100%] border-[#bdbdbd] border-solid rounded-full my-[10px]" />
@@ -60,11 +60,11 @@
                                 {:else}
                                     <Icon icon="teenyicons:users-solid" width="30px" color={`${botGuilds.find(obj => obj.id == guild.id) ? "#fc9304" : "#3080ff"}`}/>
                                 {/if}
-                                <span class={`absolute w-[70px] h-[70px] rounded-full border-solid border-[3px] ${botGuilds.find(obj => obj.id == guild.id) ? "border-primary-2" : "border-[#3080ff]"}`}/>
+                                <span class={`absolute w-[70px] h-[70px] rounded-full border-solid border-[3px] ${botGuilds.find(obj => obj.id == guild.id) ? "border-primary" : "border-[#3080ff]"}`}/>
                             </div>
 
                             <div class="infos flex flex-col justify-start w-[180px] ml-[20px]">
-                                <h1 class={`${botGuilds.find(obj => obj.id == guild.id) ? "text-primary-2" : "text-[#3080ff]"} text-[20px] font-semibold text-ellipsis whitespace-nowrap overflow-hidden w-[160px]`}>{guild.name}</h1>
+                                <h1 class={`${botGuilds.find(obj => obj.id == guild.id) ? "text-primary" : "text-[#3080ff]"} text-[20px] font-semibold text-ellipsis whitespace-nowrap overflow-hidden w-[160px]`}>{guild.name}</h1>
                                 <hr class="w-[90%]">
                                 <p class="text-[12px] w-[130px]">{guild.id}</p>
                             </div>
@@ -88,7 +88,7 @@
                                         <p class="text-white text-[14px]">Adicionar</p>
                                     </button>
                                 {:else}
-                                    <button on:click={() => goto(`/dashboard/guilds/${guild.id}`)} class="flex items-center justify-center px-[12px] py-[6px] bg-primary-2 rounded-md">
+                                    <button on:click={() => goto(`/dashboard/guilds/${guild.id}`)} class="flex items-center justify-center px-[12px] py-[6px] bg-primary rounded-md">
                                         <p class="text-white text-[14px]">Configurar</p>
                                     </button>
                                 {/if}
@@ -103,11 +103,11 @@
                 </div>
                 
                 <div class="infos flex items-center justify-center flex-col">
-                    <h1 class="text-[28px] text-primary-2 font-semibold">Nenhum servidor encontrado!</h1>
+                    <h1 class="text-[28px] text-primary font-semibold">Nenhum servidor encontrado!</h1>
                     
                     <p class="m-[10px]">Que tal tentar recarregar a pagina?</p>
                     
-                    <button on:click={() => location.reload()} class="py-[10px] px-[20px] m-[10px] bg-primary-2 rounded-md flex items-center justify-center flex-row">
+                    <button on:click={() => location.reload()} class="py-[10px] px-[20px] m-[10px] bg-primary rounded-md flex items-center justify-center flex-row">
                         <p class="text-[16px] font-medium">Recarregar</p>
 
                         <Icon icon="pepicons-pop:reload" class="m-[5px]" width="16px"/>
