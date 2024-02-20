@@ -141,7 +141,7 @@
                 
                 <div class="modal-col flex flex-col items-center justify-center w-[50%] animate-slideRight">
                     <img src={ Building } alt="development-icon" class="w-60 m-2">
-                    <h1 class="text-primary-2 font-bold text-[24px] m-2">Em desenvolvimento</h1>
+                    <h1 class="text-primary font-bold text-[24px] m-2">Em desenvolvimento</h1>
                     <button class="flex flex-row items-center justify-end m-2">
                         <a href="/" class="flex flex-row items-center justify-end m-2">
                             <Icon icon="ic:round-arrow-left" color="#fc9304" height="40px"/> 
