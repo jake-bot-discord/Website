@@ -31,31 +31,31 @@
         <ul class="flex flex-col items-center md:items-start">
             <li>
                 <a href="/" class="flex items-center relative group">
-                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary-2 absolute opacity-0 group-hover:animate-fade"/>
+                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary absolute opacity-0 group-hover:animate-fade"/>
                     <p>O inicio</p>
                 </a>
             </li>
             <li>
                 <a href="/" class="flex items-center relative group">
-                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary-2 absolute opacity-0 group-hover:animate-fade"/>
+                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary absolute opacity-0 group-hover:animate-fade"/>
                     <p>Como funciona</p>
                 </a>
             </li>
             <li>
                 <a href="/" class="flex items-center relative group">
-                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary-2 absolute opacity-0 group-hover:animate-fade"/>
+                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary absolute opacity-0 group-hover:animate-fade"/>
                     <p>Host</p>
                 </a>
             </li>
             <li>
                 <a href="/" class="flex items-center relative group">
-                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary-2 absolute opacity-0 group-hover:animate-fade"/>
+                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary absolute opacity-0 group-hover:animate-fade"/>
                     <p>Parceiros</p>
                 </a>
             </li>
             <li>
                 <a href="/" class="flex items-center relative group">
-                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary-2 absolute opacity-0 group-hover:animate-fade"/>
+                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary absolute opacity-0 group-hover:animate-fade"/>
                     <p>Termos de serviço</p>
                 </a>
             </li>
@@ -69,31 +69,31 @@
         <ul class="flex flex-col items-center md:items-start">
             <li>
                 <a href="/" class="flex items-center relative group">
-                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary-2 absolute opacity-0 group-hover:animate-fade"/>
+                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary absolute opacity-0 group-hover:animate-fade"/>
                     <p>Setup inicial</p>
                 </a>
             </li>
             <li>
                 <a href="/" class="flex items-center relative group">
-                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary-2 absolute opacity-0 group-hover:animate-fade"/>
+                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary absolute opacity-0 group-hover:animate-fade"/>
                     <p>Moderação</p>
                 </a>
             </li>
             <li>
                 <a href="/" class="flex items-center relative group">
-                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary-2 absolute opacity-0 group-hover:animate-fade"/>
+                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary absolute opacity-0 group-hover:animate-fade"/>
                     <p>Economia</p>
                 </a>
             </li>
             <li>
                 <a href="/" class="flex items-center relative group">
-                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary-2 absolute opacity-0 group-hover:animate-fade"/>
+                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary absolute opacity-0 group-hover:animate-fade"/>
                     <p>Musicas</p>
                 </a>
             </li>
             <li>
                 <a href="/" class="flex items-center relative group">
-                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary-2 absolute opacity-0 group-hover:animate-fade"/>
+                    <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary absolute opacity-0 group-hover:animate-fade"/>
                     <p>Extras</p>
                 </a>
             </li>

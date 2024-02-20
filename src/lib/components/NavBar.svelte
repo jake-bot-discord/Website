@@ -76,19 +76,19 @@
             <li class="flex items-center justify-center mx-[15px] text-[16px]">
                 <button on:click={() => goto("/")} class="flex items-center justify-center relative group cursor-pointer">
                         <p class="text-[18px]"> Suporte </p>
-                        <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
+                        <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary group-hover:animate-fade" />
                 </button>
             </li>
             <li class="flex items-center justify-center mx-[15px] text-[16px]">
                 <button on:click={() => goto("/")} class="flex items-center justify-center relative group cursor-pointer">
                         <p class="text-[18px]"> Documentação </p>
-                        <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
+                        <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary group-hover:animate-fade" />
                 </button>
             </li>
             <li class="flex items-center justify-center mx-[15px] text-[16px]">
                 <button on:click={() => goto("/planos")} class="flex items-center justify-center relative group cursor-pointer">
                         <p class="text-[18px]"> Planos </p>
-                        <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary-2 group-hover:animate-fade" />
+                        <span class="flex absolute opacity-0 translate-y-[12px] w-[35px] h-[4px] rounded-full bg-primary group-hover:animate-fade" />
                 </button>
             </li>
             <li class="flex items-center justify-center mx-[15px]">
@@ -99,23 +99,23 @@
 
     <div class="box hidden md:flex">
         {#if !_user}
-            <button class="flex justify-center items-center w-[80px] h-[45px] bg-primary-2 rounded-lg active:grayscale-[10%] hover:bg-[#e39b00] duration-500">
+            <button class="flex justify-center items-center w-[80px] h-[45px] bg-primary rounded-lg active:grayscale-[10%] hover:bg-[#e39b00] duration-500">
                 <a href={`${PUBLIC_API_URL}/auth/login`}>
                     <p class="text-[#fff] font-medium text-[15px]">Login</p>
                 </a>
             </button>
         {:else}
             <div class="user-box relative">
-                <span class="flex justify-center items-center rounded-full border-primary-2 border-[3px] w-[62px] h-[62px]">
-                    <button on:click|stopPropagation={handleMenuOpen}>
+                <span class="flex justify-center items-center rounded-full border-primary border-[3px] w-[62px] h-[62px]">
+                    <button on:click|stopPropagation={!isMenuOpen ? handleMenuOpen : handleMenuClose}>
                         <img src={`https://cdn.discordapp.com/avatars/${_user.discord.userId}/${_user.discord.avatar}`} alt="avatar" class="rounded-full w-[50px]">
                     </button>
                 </span>
 
-                <div aria-hidden="true" on:click|stopPropagation={() => {}} class={`user-nav ${isMenuOpen ? "flex" : "hidden"} justify-center items-center absolute border-primary-2 border-[3px] w-[150px] px-[10px] py-[15px] top-[65px] right-[25px] rounded-2xl animate-fade transition-[.5s] bg-theme-light-background dark:bg-theme-dark-background`}>
+                <div aria-hidden="true" on:click|stopPropagation={() => {}} class={`user-nav ${isMenuOpen ? "flex" : "hidden"} justify-center items-center absolute border-primary border-[3px] w-[150px] px-[10px] py-[15px] top-[65px] right-[25px] rounded-2xl animate-fade transition-[.5s] bg-theme-light-background dark:bg-theme-dark-background`}>
                     <ul class="flex flex-col items-center">
                         <li class="mb-[10px] w-[100%] group">
-                            <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-6px] bg-primary-2 absolute opacity-0 group-hover:animate-fade" />
+                            <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-6px] bg-primary absolute opacity-0 group-hover:animate-fade" />
                             <button on:click={() => goto("/dashboard/guilds")} class="flex flex-row items-center justify-start">
                                 <Icon icon="akar-icons:dashboard" color={$theme ? "#fff" : "#000"} class="mx-[4px]"/>
                                 <p>Servidores</p>
@@ -125,7 +125,7 @@
                         <hr class="w-[80px] border-[#8a8a8a8c] border-4px rounded-full">
       
                         <li class="my-[10px] w-[100%] group">
-                            <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-6px] bg-primary-2 absolute opacity-0 group-hover:animate-fade" />
+                            <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-6px] bg-primary absolute opacity-0 group-hover:animate-fade" />
                             <button on:click={() => goto("/")} class="flex flex-row items-center justify-start">
                                 <Icon icon="solar:user-bold" color={$theme ? "#fff" : "#000"} class="mx-[4px]"/>
                                 <p>Perfil</p>
@@ -135,7 +135,7 @@
                         <hr class="w-[80px] border-[#8a8a8a8c] border-4px rounded-full">
       
                         <li class="mt-[10px] w-[100%] group">
-                            <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-6px] bg-primary-2 absolute opacity-0 group-hover:animate-fade" />
+                            <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-6px] bg-primary absolute opacity-0 group-hover:animate-fade" />
                             <button on:click={() => logout()} class="flex flex-row items-center justify-start">
                                 <img src={ Logout } alt="logout" class="w-[16px] mx-[4px]">
                                 <p class="text-highlite-red">Sair</p>
@@ -197,7 +197,7 @@
                 {#if !_user}
 
                     <li class="flex flex-row my-[10px] w-[160px]">
-                        <button class="flex justify-center items-center w-[80px] h-[45px] bg-primary-2 rounded-lg active:grayscale-[10%] hover:bg-[#e39b00] duration-500 m-auto">
+                        <button class="flex justify-center items-center w-[80px] h-[45px] bg-primary rounded-lg active:grayscale-[10%] hover:bg-[#e39b00] duration-500 m-auto">
                             <a href={`${PUBLIC_API_URL}/auth/login`}>
                                 <p class="text-[#fff] font-medium text-[15px]">Login</p>
                             </a>
@@ -207,7 +207,7 @@
                 {:else}
                     
                     <li class="flex flex-row items-center justify-center w-[160px]"> 
-                        <hr class="w-[100px] border-[1px] border-solid border-primary-2 rounded-[1px]"/> 
+                        <hr class="w-[100px] border-[1px] border-solid border-primary rounded-[1px]"/> 
                     </li>
                     
                     <li class="flex flex-row my-[10px] w-[160px]">
