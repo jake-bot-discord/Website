@@ -19,3 +19,4 @@ discloud.config
 index.ts
 github_push
 github_push.pub
+/mocks
