@@ -1,78 +1,92 @@
-<script>
-    import Icon from "@iconify/svelte"
+<script lang="ts">
+    import Icon from "@iconify/svelte";
+    import { PUBLIC_API_URL, PUBLIC_WEB_URL } from "$env/static/public";
     import { onMount } from "svelte";
-    import { userStoredValue } from "../../store/user"
-    import { PUBLIC_API_URL } from "$env/static/public";
-    import { createEventDispatcher } from "svelte";
+    import { userStoredValue } from "../../store/user";
     
-    export let color = ""
-    export let isCardOpen = false 
-    
-    const dispatch = createEventDispatcher()
-    
-    const handleOpenCard = () => {
-        isCardOpen ? isCardOpen = false : isCardOpen = true          
-    }
+    export let vipData: any
 
-    const showModalFunction = () => {
-        dispatch('open')
-    }
+    let benefitsArray = vipData[1].benefits
+    let hiddenBenefitsArray = vipData[1].hidden_benefits
 
-    const setVipType = () => {
-        dispatch('vipType')
-    }
+    let viewBenefits = false
 
-    /**
-     * @type {any}
-     */
-    let _user
+    const toggleBenefits = () => {
+        viewBenefits = !viewBenefits
+    } 
 
-    onMount(() => {
-        return  userStoredValue.subscribe(user => {
-            _user = user
+    let userData: any
+
+    onMount(async () => {
+        userStoredValue.subscribe(user => {
+            userData = user
         })
     })
-
 </script>
 
-<div class="vip-card flex flex-col justify-center w-[280px] md:w-[250px] p-[30px] m-[20px] md:m-[20px] rounded-[20px]" style={`background-color: ${color}20; border-width: 2px; border-color: ${color}; border-style: solid`}>
-    <div class="vip-header flex flex-row justify-between w-[100%]">
-        <div class="icon w-[90px]">
-            <slot name="image"></slot>
+<div class={`vip-card flex flex-col items-center justify-center w-[280px] md:w-[250px] p-[20px] m-[20px] md:m-[20px] rounded-[20px]`} style={`background-color: ${vipData[1].color}20; border-width: 2px; border-color: ${vipData[1].color}; border-style: solid`}>
+    <div class="header flex flex-row items-center justify-start w-[100%]">
+        <div class="icon md:w-[84px] w-[50px] m-[10px]">
+            <img src={`${PUBLIC_WEB_URL}/src/lib/assets/vips/${vipData[1].name.toLowerCase()}.png`} alt="Vip icon" class="w-[80px] md:w-[54px] m-auto" />
         </div>
-        <div class="text w-[130px]">
-            <slot name="name"></slot>
-            <slot name="price"></slot>
-        </div>
-    </div>
-    <div class="vip-benefits my-[20px]">
-        <div class="visible-features">
-            <slot name="visible-features"></slot>
-        </div>
-
-        <div class={`hidden-features ${!isCardOpen ? "hidden" : ""}`}>
-            <slot name="hidden-features"></slot>
+        
+        <div class="text w-[150px]">
+            <h1 class="text-[26px] md:text-[26px] font-medium" style={`color: ${vipData[1].color};`}> { vipData[1].name } </h1>
+        
+            <p class="text-[18px]" style={`color: ${vipData[1].color};`}> { new Intl.NumberFormat('PT-BR', { style: 'currency', currency: 'BRL' }).format(vipData[1].price) } <span class="text-theme-light-text dark:text-theme-dark-text text-[10px]">/mês</span> </p>
         </div>
     </div>
-    <div class="buttons flex flex-col w-[100%] items-center justify-center">
-        <!-- {#if _user} -->
-            <button on:click|stopPropagation={() => {setVipType(), showModalFunction()}} class="purchase-button flex w-[110px] h-[50px] items-center justify-center p-[10px] px-[20px] rounded-[8px] mb-[20px] active:grayscale-[30%] duration-100 hover:w-[120px] hover:duration-150" style={`background-color: ${color}`}>
-                <p class="text-[#fff] font-medium">Comprar</p>
-            </button>
-        <!-- {:else}
-            <button class="login-button flex w-[110px] h-[50px] items-center justify-center p-[10px] px-[20px] rounded-[8px] mb-[20px] active:grayscale-[30%] duration-100 hover:w-[120px] hover:duration-150" style={`background-color: ${color}`}>
-                <a href={`${PUBLIC_API_URL}/auth/login`}>
-                    <p class="text-[#fff] font-medium">Login</p>
-                </a>
-            </button>
-        {/if} -->
 
-        <button on:click|stopPropagation={handleOpenCard} class={`expand ${!isCardOpen ? "flex" : "hidden"} flex-row justify-center items-center relative`}>
-            <p class="text-[14px]">Ver mais</p> <Icon icon="eva:arrow-down-fill" color={color} height="25px" />
+    <div class="benefits mt-[10px] mb-[5px]">
+        <div class="default">
+            <ul>
+                {#each benefitsArray as benefits}
+                    <li class="flex flex-row items-center justify-start">
+                        <Icon icon="fluent-emoji-high-contrast:multiply" width="8px" color={vipData[1].color} class="mr-[4px]"/>
+                        
+                        <p>{benefits}</p>
+                    </li>
+                {/each}
+            </ul>
+        </div>
+    
+        <div class={`hidden-benefits ${viewBenefits ? "flex" : "hidden"} animate-fade duration-200`}>
+            <ul>
+                {#each hiddenBenefitsArray as benefits}
+                    <li class="flex flex-row items-center justify-start">
+                        <Icon icon="carbon:dot-mark" width="10px" color={vipData[1].color} class="mr-[4px]"/>
+                        
+                        <p>{benefits}</p>
+                    </li>
+                {/each}
+            </ul>
+        </div>
+    </div>
+
+    <div class="actions flex flex-col items-center justify-center">
+        <button class="benefits-action flex flex-row items-center justify-center m-[5px]" on:click={toggleBenefits}>
+            <Icon icon="ic:round-play-arrow" class={`${viewBenefits ? "-rotate-90" : "rotate-90"} duration-300 mr-[2px]`} color={vipData[1].color}/>
+
+            <p> {viewBenefits ? "Ver menos" : "Ver mais"} </p>
         </button>
 
-        <button on:click|stopPropagation={handleOpenCard} class={`expand ${isCardOpen ? "flex" : "hidden"} flex-row justify-center items-center relative`}>
-            <p class="text-[14px]">Ver menos</p> <Icon icon="eva:arrow-up-fill" color={color} height="25px" />
-        </button>
+        <div class="purchase-button flex items-center justify-center m-[5px]">
+
+            {#if !userData}
+                <button  class="w-[120px] h-[40px] rounded-md m-[2px] flex items-center justify-center" style={`background-color: ${vipData[1].color};`}>
+                    <a href={`${PUBLIC_API_URL}/auth/login`}>
+                        <p class="text-white font-medium">Login</p>
+                    </a>
+                </button>
+            {:else}
+                <button class="w-[120px] h-[40px] rounded-md m-[2px] flex items-center justify-center" style={`background-color: ${vipData[1].color};`}>
+                    <p class="text-white font-medium">Assinar</p>
+                </button>
+
+                <button class="w-[40px] h-[40px] rounded-md m-[2px] flex items-center justify-center" style={`background-color: ${vipData[1].color};`}>
+                    <Icon icon="ion:gift" width="20px" color="#fff"/>
+                </button>
+            {/if}
+        </div>
     </div>
 </div>
