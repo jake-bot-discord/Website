@@ -108,7 +108,7 @@
             <div class="user-box relative">
                 <span class="flex justify-center items-center rounded-full border-primary border-[3px] w-[62px] h-[62px]">
                     <button on:click|stopPropagation={!isMenuOpen ? handleMenuOpen : handleMenuClose}>
-                        <img src={`https://cdn.discordapp.com/avatars/${_user.discord.userId}/${_user.discord.avatar}`} alt="avatar" class="rounded-full w-[50px]">
+                        <img src={`https://cdn.discordapp.com/avatars/${_user.discord.userId}/${_user.discord.images.avatar}`} alt="avatar" class="rounded-full w-[50px]">
                     </button>
                 </span>
 
