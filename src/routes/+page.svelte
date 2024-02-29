@@ -4,9 +4,9 @@
 
     import Icone from "$lib/assets/jake-icone.png"
     import Fazendas from "$lib/assets/fazenda.png"
-    import Pishing from "$lib/assets/proteção.png"
-    import Proteção from "$lib/assets/proteção-2.png"
-    import Funções from "$lib/assets/funções.png"
+    import Pishing from "$lib/assets/protecao.png"
+    import protecao from "$lib/assets/protecao-2.png"
+    import funcoes from "$lib/assets/funcoes.png"
     import Planta from "$lib/assets/planta.png"
 </script>
 
@@ -71,7 +71,7 @@
 
     <div class="row flex-col-reverse md:flex-row">
         <div class="col">
-            <img src={ Proteção } alt="proteção" class="w-[220px] md:w-[280px]">
+            <img src={ protecao } alt="proteção" class="w-[220px] md:w-[280px]">
         </div>
         <div class="col">
             <h1 class="text-primary">Moderação gratuita!</h1>
@@ -109,7 +109,7 @@
 
     <div class="row flex-col-reverse md:flex-row">
         <div class="col">
-            <img src={ Funções } alt="anti-invites" class="w-[220px] md:w-[280px]">
+            <img src={ funcoes } alt="anti-invites" class="w-[220px] md:w-[280px]">
         </div>
         <div class="col">
             <h1 class="text-primary">Por que escolher o Jake?</h1>

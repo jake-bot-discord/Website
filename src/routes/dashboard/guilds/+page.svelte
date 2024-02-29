@@ -6,7 +6,7 @@
     import Icon from "@iconify/svelte";
     import { goto } from "$app/navigation";
 
-    import NotFound from "$lib/assets/Not found.svg"
+    import NotFound from "$lib/assets/not-found.svg"
        
     let userGuilds: PartialGuild[] = []
     let botGuilds: PartialGuild[] = []
