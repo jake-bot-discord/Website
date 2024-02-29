@@ -8,13 +8,13 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"posinstall": "npm run build",
-		"start": "vite --port 8080 --host 0.0.0.0"
+		"start": "node -r dotenv/config build"
 	},
 	"devDependencies": {
-		"@fontsource/fira-mono": "^4.5.10",
 		"@iconify/svelte": "^3.1.6",
 		"@neoconfetti/svelte": "^1.0.0",
 		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-node": "^4.0.1",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/node": "^20.11.19",
