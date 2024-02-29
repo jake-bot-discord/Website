@@ -1,6 +1,6 @@
 <script lang="ts">
     import Icon from "@iconify/svelte";
-    import { PUBLIC_API_URL, PUBLIC_WEB_URL } from "$env/static/public";
+    import { PUBLIC_API_URL, PUBLIC_WEB_URL, PUBLIC_CDN_URL } from "$env/static/public";
     import { onMount } from "svelte";
     import { userStoredValue } from "../../store/user";
     
@@ -27,7 +27,7 @@
 <div class={`vip-card flex flex-col items-center justify-center w-[280px] md:w-[250px] p-[20px] m-[20px] md:m-[20px] rounded-[20px]`} style={`background-color: ${vipData[1].color}20; border-width: 2px; border-color: ${vipData[1].color}; border-style: solid`}>
     <div class="header flex flex-row items-center justify-start w-[100%]">
         <div class="icon md:w-[84px] w-[50px] m-[10px]">
-            <img src={`${PUBLIC_WEB_URL}/src/lib/assets/vips/${vipData[1].name.toLowerCase()}.png`} alt="Vip icon" class="w-[80px] md:w-[54px] m-auto" />
+            <img src={`${PUBLIC_CDN_URL}/default/vips/${vipData[1].name.toLowerCase()}.png`} alt="Vip icon" class="w-[80px] md:w-[54px] m-auto" />
         </div>
         
         <div class="text w-[150px]">
