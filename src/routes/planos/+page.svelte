@@ -1,10 +1,6 @@
 <script lang="ts">
-    import Icon from "@iconify/svelte";
     import Card from "$lib/components/vipCard.svelte";
-    import Modal from "$lib/components/Modal.svelte";
     import VipsJson from "$lib/mocks/vips.json"
-    import { onMount } from "svelte";
-    import { userStoredValue } from "../../store/user";
 
     const VipsArray = Object.entries(VipsJson)
 </script>
@@ -24,7 +20,7 @@
 
 </svelte:head>
 
-<div class="container flex flex-col justify-center items-center my-[50px]">
+<div class="container flex flex-col justify-center items-center mt-[50px] mb-[150px]">
     <div class="vip-container w-full flex flex-wrap items-start justify-center">
         {#each VipsArray as VipObj}
             <Card vipData={ VipObj } />
