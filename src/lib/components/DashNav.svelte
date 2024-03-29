@@ -3,6 +3,8 @@
 </svelte:head>
 
 <script>
+// @ts-nocheck
+
     import { goto } from "$app/navigation";
     import { page } from "$app/stores"
     import { PUBLIC_API_URL } from "$env/static/public";
@@ -39,7 +41,7 @@
             </li>
             <li class="group relative flex justify-center items-center">
                 <span class={`nav_indicator opacity-0 group-hover:opacity-100 group-hover:duration-[.8s]`} />
-                <button on:click={() => { goto("/dashboard/preferences") }} class="flex flex-row justify-center items-center">
+                <button on:click={() => { goto("/dashboard/config/customer/billing") }} class="flex flex-row justify-center items-center">
                     <Icon icon="ion:card" color="#9e9e9e" height="16px" class="mr-[4px]"/> 
                     <p class="text-[15px]">Assinatura</p>
                 </button>
@@ -61,7 +63,7 @@
         </ul>
     </div>
 
-    {#if path[3]}
+    {#if path[3] && !isNaN(path[3])}
         <div class="box w-full my-[20px]">
             <p class="font-semibold text-[12px] text-[#9b9b9b] m-[4px]">SERVIDOR</p>
             <hr class="w-[90%] mb-[4px] mx-[4px] border-[#bdbdbd] border-solid rounded-full">
