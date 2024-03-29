@@ -1,23 +1,20 @@
 <script lang="ts">
     import Icon from "@iconify/svelte";
-    import { PUBLIC_API_URL, PUBLIC_WEB_URL, PUBLIC_CDN_URL } from "$env/static/public";
+    import { PUBLIC_API_URL, PUBLIC_CDN_URL } from "$env/static/public";
     import { onMount } from "svelte";
     import { userStoredValue } from "../../store/user";
     import { goto } from "$app/navigation";
     
     export let vipData: any
-
     let benefitsArray = vipData[1].benefits
     let hiddenBenefitsArray = vipData[1].hidden_benefits
-
     let viewBenefits = false
     let viewGiftDuration = false
+    let userData: any
 
     const toggleBenefits = () => {
         viewBenefits = !viewBenefits
-    } 
-
-    let userData: any
+    }
 
     onMount(async () => {
         userStoredValue.subscribe(user => {
@@ -35,6 +32,10 @@
         viewGiftDuration = false
         
         document.body.removeEventListener('click', handleCloseGiftsDuration)
+    }
+
+    const purchase = (url: any) => {
+        window.location = `${PUBLIC_API_URL}${url}` as any
     }
 </script>
 
@@ -86,57 +87,22 @@
 
         <div class="purchase-button flex items-center justify-center m-[5px]">
 
-            <!-- {#if !userData}
+            {#if !userData}
                 <button  class="w-[120px] h-[40px] rounded-md m-[2px] flex items-center justify-center" style={`background-color: ${vipData[1].color};`}>
                     <a href={`${PUBLIC_API_URL}/auth/login`}>
                         <p class="text-white font-medium">Login</p>
                     </a>
                 </button>
-            {:else} -->
-                <button on:click={() => goto(`/api/payments/signature/create?vip=${vipData[0]}`)} class="w-[120px] h-[40px] rounded-md m-[2px] flex items-center justify-center" style={`background-color: ${vipData[1].color};`}>
+
+            {:else if userData.subscription.active !== 0}
+                <button on:click={() => goto("/dashboard/config/customer/billing")} class="w-[120px] h-[40px] rounded-md m-[2px] flex items-center justify-center" style={`background-color: ${vipData[1].color};`}>
+                    <p class="text-white font-medium">Trocar</p>
+                </button>
+            {:else}
+                <button on:click={() => purchase(`/payments/checkout?vip=${vipData[0]}&mode=subscription&userId=${userData._id}&time=1`)} class="w-[120px] h-[40px] rounded-md m-[2px] flex items-center justify-center" style={`background-color: ${vipData[1].color};`}>
                     <p class="text-white font-medium">Assinar</p>
                 </button>
-
-                <div class="gift-box relative">
-                    <button on:click|stopPropagation={!viewGiftDuration ? handleOpenGiftsDuration : handleCloseGiftsDuration } class="w-[40px] h-[40px] rounded-md m-[2px] flex items-center justify-center" style={`background-color: ${vipData[1].color};`}>
-                        <Icon icon="ion:gift" width="20px" color="#fff"/>
-                    </button>
-
-                    <div aria-hidden="true" on:click|stopPropagation={() => {}} class={`gift-duration absolute w-[130px] h-[140px] ${viewGiftDuration ? "flex" : "hidden"} items-center justify-center top-[50px]  bg-theme-light-background dark:bg-theme-dark-background border-solid border-[2px] rounded-b-[16px] rounded-tr-[16px] rounded-tl-md z-10`} style={`border-color: ${vipData[1].color};`}>
-                        <ul>
-                            <li class="group relative flex items-center justify-start m-[8px]">
-                                <span class="absolute w-[4px] h-[20px] left-[-10px] rounded-full opacity-0 group-hover:opacity-100 duration-200" style={`background-color: ${vipData[1].color};`} />
-
-                                <button on:click={() => goto(`/api/payments/gift/create?vip=${vipData[0]}&duration=1`)}>
-                                    <p>
-                                        <span style={`color: ${vipData[1].color};`}>1</span> mês
-                                    </p>
-                                </button>
-                            </li>
-                            <hr style={`border-color: ${vipData[1].color};`}>
-                            <li class="group relative flex items-center justify-start m-[8px]">
-                                <span class="absolute w-[4px] h-[20px] left-[-10px] rounded-full opacity-0 group-hover:opacity-100 duration-200" style={`background-color: ${vipData[1].color};`} />
-
-                                <button on:click={() => goto(`/api/payments/gift/create?vip=${vipData[0]}&duration=3`)}>
-                                    <p>
-                                        <span style={`color: ${vipData[1].color};`}>3</span> mêses
-                                    </p>
-                                </button>
-                            </li>
-                            <hr style={`border-color: ${vipData[1].color};`}>
-                            <li class="group relative flex items-center justify-start m-[8px]">
-                                <span class="absolute w-[4px] h-[20px] left-[-10px] rounded-full opacity-0 group-hover:opacity-100 duration-200" style={`background-color: ${vipData[1].color};`} />
-
-                                <button on:click={() => goto(`/api/payments/gift/create?vip=${vipData[0]}&duration=12`)}>
-                                    <p>
-                                        <span style={`color: ${vipData[1].color};`}>12</span> mêses
-                                    </p>
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            <!-- {/if} -->
+            {/if}
         </div>
     </div>
 </div>
