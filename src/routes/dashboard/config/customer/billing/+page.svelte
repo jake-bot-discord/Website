@@ -21,7 +21,7 @@
         const { data: invoicesReqData } = await axios.get(`${PUBLIC_API_URL}/payments/retrieve/invoices`, { withCredentials: true });
         const { data: subscriptionReqData } = await axios.get(`${PUBLIC_API_URL}/payments/retrieve/subscription`, { withCredentials: true });
 
-        userData = sessionData.updatedUserData;
+        userData = sessionData;
         billingData = invoicesReqData;
         subscriptionData = subscriptionReqData;
     });
