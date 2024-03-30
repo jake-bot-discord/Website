@@ -93,8 +93,7 @@
                         <p class="text-white font-medium">Login</p>
                     </a>
                 </button>
-
-            {:else if userData.subscription.active !== 0}
+            {:else if userData.subscription.active !== "0"}
                 <button on:click={() => goto("/dashboard/config/customer/billing")} class="w-[120px] h-[40px] rounded-md m-[2px] flex items-center justify-center" style={`background-color: ${vipData[1].color};`}>
                     <p class="text-white font-medium">Trocar</p>
                 </button>
