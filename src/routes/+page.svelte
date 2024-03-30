@@ -24,7 +24,7 @@
 	<meta property="twitter:description" content="O bot gratuito que faz tudo que bots pagos não fazem! Alem de ser um projeto completo e seguro, o Jake é completamente gratuito e sem fins lucrativos!" />
 </svelte:head>
 
-<div class="container flex flex-column md:m-auto md:w-[80%] ">
+<div class="container flex flex-col md:m-auto md:w-[80%] ">
     <div class="row flex-col-reverse md:flex-row">
         <div class="col">
             <img src={ Icone } alt="icone" class="w-[220px] md:w-[280px]">
