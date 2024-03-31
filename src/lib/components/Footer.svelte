@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li>
-                <a href="/" class="flex items-center relative group">
+                <a href="/partners" class="flex items-center relative group">
                     <span class="flex w-[4px] h-[20px] rounded-full translate-x-[-8px] bg-primary absolute opacity-0 group-hover:animate-fade"/>
                     <p>Parceiros</p>
                 </a>

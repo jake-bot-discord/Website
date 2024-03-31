@@ -5,6 +5,8 @@
     import { onMount } from "svelte";
 </script>
 
-<NavBar />
-<slot class="p-[20px]"/>
-<Footer />
+<div class="app flex items-center justify-center flex-col">
+    <NavBar />
+    <slot class="p-[20px]"/>
+    <Footer />
+</div>

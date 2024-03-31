@@ -64,7 +64,7 @@
     }
 </script>
 
-<nav class="flex flex-row justify-between items-center px-[10px]">
+<nav class="flex flex-row justify-between items-center px-[10px] w-[100%]">
     <div class="box bg-purple-100 w-[70px] flex justify-center items-center">
         <button on:click={() => goto("/")}>
             <img src={ Logo } alt="logo" class="w-[100px] md:w-[70px]">

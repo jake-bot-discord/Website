@@ -21,7 +21,7 @@
 </svelte:head>
 
 <div class="container flex flex-col justify-center items-center mt-[50px] mb-[150px]">
-    <div class="vip-container w-full flex flex-wrap items-start justify-center">
+    <div class="vip-section w-full flex flex-wrap items-start justify-center">
         {#each VipsArray as VipObj}
             <Card vipData={ VipObj } />
         {/each}

@@ -44,12 +44,12 @@
 </script>
 
 <div class="container relative flex flex-col items-center justify-center mb-[100px]">
-    <div class="signature-box w-[500px] h-[250px] m-[20px]">
+    <div class="signature-box w-[600px] h-[250px] m-[20px]">
         <div class="header h-[30px] flex items-center justify-start px-[6px]">
-            <p>Assinatura</p>
+            <h2 class="font-semibold text-[12px] text-[#9b9b9b]">ASSINATURA</h2>
         </div>
 
-        <hr class="w-[500px] border-solid border-gray-2">
+        <hr class="w-[600px] border-solid border-gray-2">
 
         <div class="content flex flex-row items-center justify-center">
             <div class="image-box w-[150px] h-[220px] flex items-center justify-center">
@@ -120,15 +120,15 @@
         </div>
     </div>
 
-    <div class="transactions-box flex flex-col items-center justify-center w-[500px]">
-        <div class="header w-[500px] h-[30px] flex items-center justify-start px-[6px]">
-            <p>Cobranças</p>
+    <div class="transactions-box flex flex-col items-center justify-center w-[600px]">
+        <div class="header w-[600px] h-[30px] flex items-center justify-start px-[6px]">
+            <h2 class="font-semibold text-[12px] text-[#9b9b9b]">COBRANÇAS</h2>
         </div>
-        <hr class="w-[500px] border-solid border-gray-2">
+        <hr class="w-[600px] border-solid border-gray-2">
         <ul>
             {#if billingData}
                 {#each billingData as billingObj}
-                    <li class="billingCard w-[500px] p-[15px] flex flex-row items-center justify-between bg-[#55555505]">
+                    <li class="billingCard w-[600px] p-[15px] flex flex-row items-center justify-between bg-[#55555505]">
                         <div class="date-box">
                             <p class="flex items-center justify-center">
                                 {
