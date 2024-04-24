@@ -1,44 +1,27 @@
-<script lang="ts">
-    import axios from "axios";
-    import { onMount } from "svelte";
-    import { PUBLIC_API_URL, PUBLIC_CDN_URL } from "$env/static/public";
-    import { goto } from "$app/navigation";
+<script>
+// @ts-nocheck
+
+    import { PUBLIC_CDN_URL } from "$env/static/public";
     import VipsJSON from "$lib/mocks/vips.json";
     import Icon from "@iconify/svelte";
     import { format } from "date-fns";
     import { ptBR } from "date-fns/locale";
 
-    let userData: any;
-    let billingData: any;
-    let subscriptionData: any;
-    let subscriptionPlane: any = "nenhum";
+    export let data
 
-    onMount(async () => {
-        const { data: sessionData } = await axios.get(`${PUBLIC_API_URL}/auth/session`, { withCredentials: true });
-
-        if (!sessionData) return goto("/");
-
-        const { data: invoicesReqData } = await axios.get(`${PUBLIC_API_URL}/payments/retrieve/invoices`, { withCredentials: true });
-        const { data: subscriptionReqData } = await axios.get(`${PUBLIC_API_URL}/payments/retrieve/subscription`, { withCredentials: true });
-
-        userData = sessionData;
-        billingData = invoicesReqData;
-        subscriptionData = subscriptionReqData;
-    });
-
-    $: console.log(billingData);
+    let subscriptionPlane = "nenhum";
 
     const vipsArray = Object.entries(VipsJSON);
 
-    $: if (subscriptionData && subscriptionData.active !== 0) {
-        subscriptionPlane = vipsArray.find((obj) => obj[0] == subscriptionData.vipType);
+    $: if (data.subscriptionData && data.subscriptionData.active !== 0) {
+        subscriptionPlane = vipsArray.find((obj) => obj[0] == data.subscriptionData.vipType);
     }
 
-    const go = (url: Location) => {
+    const go = (url) => {
         window.location = url;
     };
 
-    const formatDate = (date: any) => {
+    const formatDate = (date) => {
         return format(new Date(date), "dd/MM/yyyy", { locale: ptBR })
     }
 </script>
@@ -53,7 +36,7 @@
 
         <div class="content flex flex-row items-center justify-center">
             <div class="image-box w-[150px] h-[220px] flex items-center justify-center">
-                {#if subscriptionData && subscriptionPlane && subscriptionData.active !== 0}
+                {#if data.subscriptionData && subscriptionPlane && data.subscriptionData.active !== 0}
                     <img src={`${PUBLIC_CDN_URL}/default/vips/${subscriptionPlane[1].name.toLowerCase()}.png`} alt="vip-icon" class="w-[150px] h-[150px] mr-[5px]">
                 {:else}
                     <img src={`${PUBLIC_CDN_URL}/default/vips/tronco.png`} alt="vip-icon" class="w-[150px] h-[150px] mr-[5px]">
@@ -62,7 +45,7 @@
 
             <div class="data-box w-[350px] h-[220px] p-[30px] flex-col items-center justify-center">
                 <div class="plane-name">
-                    {#if subscriptionData && subscriptionPlane && subscriptionData.active !== 0}
+                    {#if data.subscriptionData && subscriptionPlane && data.subscriptionData.active !== 0}
                         <p class="text-[30px] font-semibold" style={`color: ${subscriptionPlane[1].color};`}>Plano {subscriptionPlane[1].name}</p>
                     {:else}
                         <p class="text-[30px] font-semibold">Nenhum</p>
@@ -74,7 +57,7 @@
                 <div class="siganture-status flex flex-row items-center justify-start">
                     <p>Status:</p>
 
-                    {#if subscriptionData && subscriptionPlane && subscriptionData.active !== 0}
+                    {#if data.subscriptionData && subscriptionPlane && data.subscriptionData.active !== 0}
                         <p class="flex items-center justify-center ml-[5px]">
                             Ativa
                         </p>
@@ -88,11 +71,15 @@
                 <div class="expires-at flex flex-row items-center justify-start">
                     <p>Proxima cobrança:</p>
 
-                    {#if subscriptionData && subscriptionPlane && subscriptionData.active !== 0}
+                    {#if data.subscriptionData && subscriptionPlane && data.subscriptionData.active !== 0}
                         <p class="flex items-center justify-center ml-[5px]">
-                            {
-                                formatDate(subscriptionData.expires_at * 1000)
-                            }
+                            {#if data.subscriptionData.expires_at * 1000 < Date.now()}
+                                <span class="text-red-500">Expirado</span>
+                            {:else}
+                                {
+                                    formatDate(data.subscriptionData.expires_at * 1000)
+                                }
+                            {/if}
                         </p>
                     {:else}
                         <p class="flex items-center justify-center ml-[5px]">
@@ -102,7 +89,7 @@
                 </div>
 
                 <div class="buttons flex flex-row  my-[20px] items-center justify-center">
-                    {#if subscriptionData && subscriptionPlane && subscriptionData.active !== 0}
+                    {#if data.subscriptionData && subscriptionPlane && data.subscriptionData.active !== 0}
                     <button disabled class="w-[120px] h-[36px] flex flex-row items-center justify-center rounded-md bg-primary mx-[10px] cursor-not-allowed">
                         <p class="text-[14px]">Trocar</p>
 
@@ -126,8 +113,8 @@
         </div>
         <hr class="w-[600px] border-solid border-gray-2">
         <ul>
-            {#if billingData}
-                {#each billingData as billingObj}
+            {#if data.billingData}
+                {#each data.billingData as billingObj}
                     <li class="billingCard w-[600px] p-[15px] flex flex-row items-center justify-between bg-[#55555505]">
                         <div class="date-box">
                             <p class="flex items-center justify-center">

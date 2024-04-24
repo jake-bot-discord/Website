@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { onMount } from "svelte";
     import { userStoredValue } from "../../store/user"
     import { PUBLIC_API_URL } from "$env/static/public"
@@ -13,17 +13,6 @@
     import Logout from "$lib/icons/logout.svg"
     import axios from "axios";
     import { goto } from "$app/navigation";
-
-    /**
-     * @type {any}
-     */
-    let _user
-
-    onMount(() => {
-        return  userStoredValue.subscribe(user => {
-            _user = user
-        })
-    })
 
     export let isMenuOpen = false
 
@@ -98,7 +87,7 @@
     </div>
 
     <div class="box hidden md:flex">
-        {#if !_user}
+        {#if !$userStoredValue}
             <button class="flex justify-center items-center w-[80px] h-[45px] bg-primary rounded-lg active:grayscale-[10%] hover:bg-[#e39b00] duration-500">
                 <a href={`${PUBLIC_API_URL}/auth/login`}>
                     <p class="text-[#fff] font-medium text-[15px]">Login</p>
@@ -108,7 +97,7 @@
             <div class="user-box relative">
                 <span class="flex justify-center items-center rounded-full border-primary border-[3px] w-[62px] h-[62px]">
                     <button on:click|stopPropagation={!isMenuOpen ? handleMenuOpen : handleMenuClose}>
-                        <img src={`https://cdn.discordapp.com/avatars/${_user.discord.userId}/${_user.discord.images.avatar}`} alt="avatar" class="rounded-full w-[50px]">
+                        <img src={`https://cdn.discordapp.com/avatars/${$userStoredValue.discord.userId}/${$userStoredValue.discord.images.avatar}`} alt="avatar" class="rounded-full w-[50px]">
                     </button>
                 </span>
 
@@ -194,7 +183,7 @@
                     </button>
                 </li>
 
-                {#if !_user}
+                {#if !$userStoredValue}
 
                     <li class="flex flex-row my-[10px] w-[160px]">
                         <button class="flex justify-center items-center w-[80px] h-[45px] bg-primary rounded-lg active:grayscale-[10%] hover:bg-[#e39b00] duration-500 m-auto">

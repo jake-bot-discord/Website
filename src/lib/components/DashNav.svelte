@@ -1,8 +1,4 @@
-<svelte:head>
-    <title>Servidores - Jake</title>
-</svelte:head>
-
-<script>
+<script lang="ts">
 // @ts-nocheck
 
     import { goto } from "$app/navigation";
@@ -11,6 +7,7 @@
     import Icon from "@iconify/svelte";
     import axios from "axios";
     import NavSectionDrop from "./NavSectionDrop.svelte";
+    import { getContext, onMount } from "svelte";
 
     const path = $page.url.pathname.split("/")
 
@@ -26,6 +23,10 @@
         }
     }
 </script>
+
+<svelte:head>
+    <title>Servidores - Jake</title>
+</svelte:head>
 
 <nav class="flex flex-col items-start my-[20px] w-[200px] cursor-default">
     <div class="box w-full">
@@ -73,23 +74,8 @@
 
                     <ul slot="section-list" class="flex relative flex-col items-start before:w-[2px] before:h-full before:dark:bg-[#9e9e9e25] before:bg-[#9e9e9e6b] before:absolute before:left-[8px] before:rounded-full animate-slideTop duration-300">
                         <li>
-                            <button>
-                                <p class="text-[15px] ml-[20px]">Automod</p>
-                            </button>
-                        </li>
-                        <li>
-                            <button>
-                                <p class="text-[15px] ml-[20px]">Banimentos</p>
-                            </button>
-                        </li>
-                        <li>
-                            <button>
-                                <p class="text-[15px] ml-[20px]">Expulsões</p>
-                            </button>
-                        </li>
-                        <li>
-                            <button>
-                                <p class="text-[15px] ml-[20px]">Castigo</p>
+                            <button on:click={() => goto(`/${path[1]}/${path[2]}/${path[3]}/moderation/entry`)}>
+                                <p class="text-[15px] ml-[20px]">Entrada / Saida</p>
                             </button>
                         </li>
                     </ul>

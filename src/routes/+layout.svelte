@@ -2,7 +2,6 @@
     import "../app.css"
     import NavBar from "$lib/components/NavBar.svelte"
     import Footer from "$lib/components/Footer.svelte"
-    import { onMount } from "svelte";
 </script>
 
 <div class="app flex items-center justify-center flex-col">
